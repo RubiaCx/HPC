@@ -59,3 +59,7 @@ $$ Sparsity = nnz / (n\_rows * n\_cols)$$
 | Vector GPU vs CUSPARSE| 0.002542   | 0.000003   | --        | --        |
 | My GPU vs CPU         | 0.002237   | 0.000005   | --        | --        |
 | My GPU vs CUSPARSE    | 0.002542   | 0.000003   | --        | --        |
+
+## 参考
+- https://github.com/peakcrosser7/spmv-samples
+- https://github.com/Liu-xiandong/How_to_optimize_in_GPU/tree/master/spmv
