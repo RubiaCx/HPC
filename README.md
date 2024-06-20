@@ -1,6 +1,6 @@
 # CUDA学习笔记
 
-- SpMV 
+- SpMV CSR
   - CPU
   - GPU scalar
   - GPU vector
