@@ -7,22 +7,13 @@
 #include <cuda_runtime.h>
 #include <cublas_v2.h>
 
+#include "../include/error.cuh"
+
 // cal offset from row col and ld , in row-major matrix, ld is the width of the matrix
 #define OFFSET(row, col, ld) ((row) * (ld) + (col))
 
 // transfer float4
 #define FETCH_FLOAT4(pointer) (reinterpret_cast<float4 *>(&(pointer))[0])
-
-#define CHECK_CUDA(func)                                               \
-    {                                                                  \
-        cudaError_t status = (func);                                   \
-        if (status != cudaSuccess)                                     \
-        {                                                              \
-            printf("CUDA API failed at line %d with error: %s (%d)\n", \
-                   __LINE__, cudaGetErrorString(status), status);      \
-            return EXIT_FAILURE;                                       \
-        }                                                              \
-    }
 
 /* 一共开启 M * N个thread，每个thread负责C中一个元素的计算
  * 每一个乘法运算需要读两次内存和一次FMA
