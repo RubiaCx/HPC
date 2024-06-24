@@ -55,3 +55,23 @@ void checkAndPrint(const float *answer, const float *result, int n, float ms)
     if (passed)
         printf("%20.2f%20.6f\n", 2 * n * sizeof(float) * 1e-6 * TEST_TIMES / ms, ms / TEST_TIMES);
 }
+
+bool checkAnswer(const float *answer, const float *result, int M, int N)
+{
+    double eps = 1.e-6; // machine zero
+    double dot_length = M;
+    for (int i = 0; i < M * N; i++)
+    {
+        int row = i / N;
+        int col = i % N;
+        double abs_err = fabs(answer[i] - result[col * M + row]);
+        double abs_val = fabs(answer[i]);
+        double rel_err = abs_err / abs_val / dot_length;
+        if (rel_err > eps)
+        {
+            printf("Error! Matrix[%05d]=%.8f, ref=%.8f error term is > %E\n", i, answer[i], result[col * M + row], eps);
+            return false;
+        }
+    }
+    return true;
+}

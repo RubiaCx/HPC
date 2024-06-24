@@ -1,69 +1,170 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <iostream>
+#include <random>
+#include <math.h>
+#include <chrono>
+#include "../include/utils.h"
+#include "../include/warp.cuh"
+#include "../include/error.cuh"
 // CUDA runtime
 #include <cuda_runtime.h>
 #include <cublas_v2.h>
-#include <math.h> 
 
 // cal offset from row col and ld , in row-major matrix, ld is the width of the matrix
 #define OFFSET(row, col, ld) ((row) * (ld) + (col))
 
 // transfer float4
-#define FETCH_FLOAT4(pointer) (reinterpret_cast<float4*>(&(pointer))[0])
+#define FETCH_FLOAT4(pointer) (reinterpret_cast<float4 *>(&(pointer))[0])
 
-#define checkCudaErrors(func)				\
-{									\
-    cudaError_t e = (func);			\
-    if(e != cudaSuccess)						                \
-        printf ("%s %d CUDA: %s\n", __FILE__,  __LINE__, cudaGetErrorString(e));		\
-}
-
-template <unsigned int WarpSize>
-__device__ __forceinline__ float warpReduceSum(float sum) {
-    if (WarpSize >= 32)sum += __shfl_down_sync(0xffffffff, sum, 16); // 0-16, 1-17, 2-18, etc.
-    if (WarpSize >= 16)sum += __shfl_down_sync(0xffffffff, sum, 8);// 0-8, 1-9, 2-10, etc.
-    if (WarpSize >= 8)sum += __shfl_down_sync(0xffffffff, sum, 4);// 0-4, 1-5, 2-6, etc.
-    if (WarpSize >= 4)sum += __shfl_down_sync(0xffffffff, sum, 2);// 0-2, 1-3, 4-6, 5-7, etc.
-    if (WarpSize >= 2)sum += __shfl_down_sync(0xffffffff, sum, 1);// 0-1, 2-3, 4-5, etc.
-    return sum;
-}
-
-// if N <= 16
-template <
-    const int ROW_PER_WARP
-    > 
-__global__ void Sgemv_v2( 
-    float * __restrict__ A,
-    float * __restrict__ x,
-    float * __restrict__ y, 
-    const int M,
-    const int N) {
-    // Block index
-    int bx = blockIdx.x;
-
-    // Thread index
-    int tx = threadIdx.x;
-    int ty = threadIdx.y;
-
-    const int warp_size=32;
-    int laneId= tx % warp_size;
-    int current_warp_row = (blockDim.y * bx + ty) * ROW_PER_WARP;
-    const int kWarp_size = warp_size / ROW_PER_WARP;
-    int kLaneId = laneId % kWarp_size;
-    int current_thread_row = current_warp_row + laneId / kWarp_size;
-
-    if(current_thread_row < M){
-        float res=0;
-        int current_col = kLaneId;
-        res += A[current_thread_row * N + current_col] * x[current_col];
-        res = warpReduceSum<kWarp_size>(res);
-        if(kLaneId==0) y[current_thread_row]=res;
+void cpuSgemv(float *A, float *x, float *y, int M, int N)
+{
+    for (int i = 0; i < M; i++)
+    {
+        float sum = 0.0;
+        for (int j = 0; j < N; j++)
+        {
+            sum += A[i * N + j] * x[j];
+        }
+        y[i] = sum;
     }
 }
 
-int main(int argc, char** argv) {
-    if (argc != 3) {
+// x = blockIdx.x * blockDim.x + threadIdx.x;
+// y = blockIdx.y * blockDim.y + threadIdx.y
+// N = 16 每个warp处理2行
+template <const int WARP_SIZE, const int ROW_PER_WARP, class value_t>
+__global__ void Sgemv_kernel_n16(value_t *__restrict__ A, value_t *__restrict__ x, value_t *__restrict__ y,
+                                 const int M, const int N)
+{
+    int tx = threadIdx.x;  // 每个线程
+    int warpRowBase = blockIdx.x * ROW_PER_WARP;  // 每个block处理ROW_PER_WARP行，blockIdx.x * ROW_PER_WARP 是第一行的索引
+
+    // 处理第一行和第二行
+    for (int row = warpRowBase; row < min(warpRowBase + ROW_PER_WARP, M); ++row) {
+        if (tx < N) 
+        {
+            float res = A[row * N + tx] * x[tx];
+            // 在warp内进行归约求和
+            res = warpReduceSum<value_t>(res, WARP_SIZE);
+            // 只有第一个线程写回结果到全局内存
+            if (tx == 0)
+                y[row] = res;
+        }
+    }
+
+}
+
+// N = 32，每个warp处理1行
+template <const int WARP_SIZE, class value_t>
+__global__ void Sgemv_kernel_n32(value_t *__restrict__ A, value_t *__restrict__ x, value_t *__restrict__ y,
+                                 const int M, const int N)
+{
+    int tx = threadIdx.x;  // 每个线程处理一列
+    int row = blockIdx.x;  // 每个块处理一行
+
+    if (row < M)
+    {
+        value_t res = 0;
+        // 每个线程处理一列中的元素
+        res += A[row * N + tx] * x[tx];
+        
+        // 对 warp 内的结果进行归约求和
+        res = warpReduceSum<value_t>(res, WARP_SIZE);
+
+        // 只有第一个线程写回结果到全局内存
+        if (tx == 0)
+            y[row] = res;
+    }
+}
+
+// N = 128，每个warp处理1行，向量化指令，即一个指令处理4个元素
+template <const int WARP_SIZE, class value_t>
+__global__ void Sgemv_kernel_n128(value_t *__restrict__ A, value_t *__restrict__ x, value_t *__restrict__ y,
+                                  const int M, const int N)
+{
+    int tx = threadIdx.x;  
+    int row = blockIdx.x;  // 每个块处理一行
+
+    if (row < M)
+    {
+        value_t res = 0;
+        int numVectorPerRow = N / 4; // 因为使用 float4，每行有 N/4 个向量
+        int numVectorsPerThread = numVectorPerRow / WARP_SIZE;  // 计算每个线程应处理多少向量
+        int vectorIndexOffset = tx * numVectorsPerThread;       // 每个线程处理向量的起始索引
+
+        // 确保不越界
+        int maxVectorIndex = min((tx + 1) * numVectorsPerThread, numVectorPerRow);
+
+        for (int i = vectorIndexOffset; i < maxVectorIndex; i++)
+        {
+            int col = i * 4;  // 每个向量对应四个列
+            float4 vecA = reinterpret_cast<float4*>(&A[row * N + col])[0];
+            float4 vecX = reinterpret_cast<float4*>(&x[col])[0];
+            res += vecA.x * vecX.x + vecA.y * vecX.y + vecA.z * vecX.z + vecA.w * vecX.w;
+        }
+
+        res = warpReduceSum<value_t>(res, WARP_SIZE);
+
+        // Write the result to global memory
+        if (tx == 0)
+            y[row] = res;
+    }
+}
+
+
+template <class value_t>
+__device__ value_t kahanSum(value_t *data, int N)
+{
+    value_t sum = 0.0;
+    value_t c = 0.0; // 一个运行时小的误差补偿变量
+    for (int i = 0; i < N; ++i)
+    {
+        value_t y = data[i] - c;
+        value_t t = sum + y;
+        c = (t - sum) - y;
+        sum = t;
+    }
+    return sum;
+}
+
+template <const int WARP_SIZE, const int ROW_PER_WARP, class value_t>
+__global__ void Sgemv_kernel_Kahan(value_t *__restrict__ A, value_t *__restrict__ x, value_t *__restrict__ y,
+                                   const int M, const int N)
+{
+    extern __shared__ value_t shared_data[];
+
+    int bx = blockIdx.x;
+    int tx = threadIdx.x;
+    int ty = threadIdx.y;
+
+    int laneId = tx % WARP_SIZE;
+    int current_warp_row = (blockDim.y * bx + ty) * ROW_PER_WARP;
+    const int sub_WARP_SIZE = WARP_SIZE / ROW_PER_WARP;
+    int kLaneId = laneId % sub_WARP_SIZE;
+    int current_thread_row = current_warp_row + laneId / sub_WARP_SIZE;
+
+    if (current_thread_row < M)
+    {
+        int col = kLaneId;
+        while (col < N)
+        {
+            shared_data[threadIdx.x * N + col] = A[current_thread_row * N + col] * x[col];
+            col += sub_WARP_SIZE;
+        }
+        __syncthreads(); // 确保所有数据都写入shared memory
+
+        if (kLaneId == 0)
+        { // 使用第一个线程来执行Kahan求和
+            y[current_thread_row] = kahanSum<value_t>(&shared_data[threadIdx.x * N], N);
+        }
+    }
+}
+
+int main(int argc, char **argv)
+{
+    if (argc != 3)
+    {
         printf("usage: ./main [M] [N]\n");
         exit(0);
     }
@@ -73,87 +174,157 @@ int main(int argc, char** argv) {
     size_t bytes_A = sizeof(float) * M * N;
     size_t bytes_x = sizeof(float) * N;
     size_t bytes_y = sizeof(float) * M;
-    float* h_A = (float*)malloc(bytes_A);
-    float* h_x = (float*)malloc(bytes_x);
-    float* h_y = (float*)malloc(bytes_y);
-    float* h_y1 = (float*)malloc(bytes_y);
+    float *h_A = (float *)malloc(bytes_A);
+    float *h_x = (float *)malloc(bytes_x);
+    float *h_y = (float *)malloc(bytes_y);
+    float *h_y_gpu = (float *)malloc(bytes_y);
+    float *h_y_cpu = (float *)malloc(bytes_y);
+    float *h_y_api = (float *)malloc(bytes_y);
+    float *d_A;
+    float *d_x;
+    float *d_y;
+    generate_random_value_float(h_A, M * N, 0.0, 1.0);
+    generate_random_value_float(h_x, N, 0.0, 1.0);
+    memset(h_y, 0, M * sizeof(float));
+    memset(h_y_gpu, 0, M * sizeof(float));
+    memset(h_y_cpu, 0, M * sizeof(float));
+    memset(h_y_api, 0, M * sizeof(float));
 
-    float* d_A;
-    float* d_x;
-    float* d_y;
+    // // 输出前10个元素以验证
+    // for (int i = 0; i < 10; ++i) {
+    //     std::cout << h_A[i] << " ";
+    // }
+    // std::cout << std::endl;
 
-    checkCudaErrors(cudaMalloc(&d_A, bytes_A));
-    checkCudaErrors(cudaMalloc(&d_x, bytes_x));
-    checkCudaErrors(cudaMalloc(&d_y, bytes_y));
-
-    const int WARP_SIZE=32;
-    const int ROW_PER_WARP=2;
-    const int THREAD_PER_BLOCK=128;
-    const int WARP_PER_BLOCK=THREAD_PER_BLOCK/WARP_SIZE;
-    const int ROW_PER_BLOCK=WARP_PER_BLOCK * ROW_PER_WARP;
-
-    // 生成A的数据
-    for( int i = 0; i < M * N; i++ ) {
-        h_A[i] = (float)i/N;
+    int nIter = 1;
+    cpuSgemv(h_A, h_x, h_y_cpu, M, N);
+    auto start_cpu = std::chrono::high_resolution_clock::now();
+    for (int run = 0; run < nIter; run++)
+    {
+        cpuSgemv(h_A, h_x, h_y_cpu, M, N);
     }
+    auto end_cpu = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> cpu_time = end_cpu - start_cpu;
+    printf("CPU time: %.5f seconds\n", cpu_time.count() / nIter);
+    // for (int i = 0; i < M; ++i) {
+    //     std::cout << h_y_cpu[i] << " ";
+    // }
+    // std::cout << std::endl;
+    const int WARP_SIZE = 32;
+    const int ROW_PER_WARP = 2;
 
-    // 生成x的数据
-    for( int i = 0; i < N; i++ ) {
-        h_x[i] = 1;
+    float gpu_time = 0;
+    cudaEvent_t start, stop;
+    CHECK_CUDA(cudaEventCreate(&start));
+    CHECK_CUDA(cudaEventCreate(&stop));
+    CHECK_CUDA(cudaMalloc(&d_A, bytes_A));
+    CHECK_CUDA(cudaMalloc(&d_x, bytes_x));
+    CHECK_CUDA(cudaMalloc(&d_y, bytes_y));
+    CHECK_CUDA(cudaMemcpy(d_A, h_A, bytes_A, cudaMemcpyHostToDevice));
+    CHECK_CUDA(cudaMemcpy(d_x, h_x, bytes_x, cudaMemcpyHostToDevice));
+    CHECK_CUDA(cudaMemcpy(d_y, h_y, bytes_y, cudaMemcpyHostToDevice));
+    if(N <= 16) {
+        dim3 dimGrid((M + ROW_PER_WARP - 1) / ROW_PER_WARP);  // 确保所有行都被处理，每个块处理 ROW_PER_WARP 行
+        dim3 dimBlock(WARP_SIZE);  // 每行分配 WARP_SIZE / ROW_PER_WARP 个线程，每块处理 ROW_PER_WARP 行
+        Sgemv_kernel_n16<WARP_SIZE, ROW_PER_WARP, float><<<dimGrid, dimBlock>>>(d_A, d_x, d_y, M, N);
+        CHECK_CUDA(cudaEventRecord(start));
+        for (int run = 0; run < nIter; run++)
+        {
+            Sgemv_kernel_n16<WARP_SIZE, ROW_PER_WARP, float><<<dimGrid, dimBlock>>>(d_A, d_x, d_y, M, N);
+            cudaError_t err = cudaGetLastError();
+            if (err != cudaSuccess)
+            {
+                printf("CUDA Error: %s\n", cudaGetErrorString(err));
+            }
+        }
+        CHECK_CUDA(cudaEventRecord(stop));
+        CHECK_CUDA(cudaEventSynchronize(stop));
+        CHECK_CUDA(cudaEventElapsedTime(&gpu_time, start, stop));
+        CHECK_CUDA(cudaMemcpy(h_y_gpu, d_y, bytes_y, cudaMemcpyDeviceToHost));
+        printf("GPU time: %.5f seconds\n", gpu_time / nIter);
     }
-    memset(h_y,0,M*sizeof(float));
-    memset(h_y1,0,M*sizeof(float));
-
-    int nIter = 1000;
-    checkCudaErrors(cudaMemcpy( d_A, h_A, bytes_A, cudaMemcpyHostToDevice));
-    checkCudaErrors(cudaMemcpy( d_x, h_x, bytes_x, cudaMemcpyHostToDevice));
-    checkCudaErrors(cudaMemcpy( d_y, h_y, bytes_y, cudaMemcpyHostToDevice));
-    for (int run = 0 ; run < nIter; run ++ ) {
-        dim3 dimGrid(M/ROW_PER_BLOCK);
-        dim3 dimBlock(32,THREAD_PER_BLOCK/WARP_SIZE);
-        Sgemv_v2<ROW_PER_WARP><<< dimGrid, dimBlock >>>(d_A, d_x, d_y, M, N);
+    else if(N == 32) {
+        dim3 dimGrid(M);  
+        dim3 dimBlock(WARP_SIZE); 
+        Sgemv_kernel_n32<WARP_SIZE, float><<<dimGrid, dimBlock>>>(d_A, d_x, d_y, M, N);
+        CHECK_CUDA(cudaEventRecord(start));
+        for (int run = 0; run < nIter; run++)
+        {
+            Sgemv_kernel_n32<WARP_SIZE, float><<<dimGrid, dimBlock>>>(d_A, d_x, d_y, M, N);
+            cudaError_t err = cudaGetLastError();
+            if (err != cudaSuccess)
+            {
+                printf("CUDA Error: %s\n", cudaGetErrorString(err));
+            }
+        }
+        CHECK_CUDA(cudaEventRecord(stop));
+        CHECK_CUDA(cudaEventSynchronize(stop));
+        CHECK_CUDA(cudaEventElapsedTime(&gpu_time, start, stop));
+        CHECK_CUDA(cudaMemcpy(h_y_gpu, d_y, bytes_y, cudaMemcpyDeviceToHost));
+        printf("GPU time: %.5f seconds\n", gpu_time / nIter);
     }
-    checkCudaErrors(cudaMemcpy( h_y, d_y, bytes_y, cudaMemcpyDeviceToHost));
-
+    else if(N >= 128) {
+        dim3 dimGrid(M);  
+        dim3 dimBlock(WARP_SIZE); 
+        Sgemv_kernel_n128<WARP_SIZE, float><<<dimGrid, dimBlock>>>(d_A, d_x, d_y, M, N);
+        CHECK_CUDA(cudaEventRecord(start));
+        for (int run = 0; run < nIter; run++)
+        {
+            Sgemv_kernel_n128<WARP_SIZE, float><<<dimGrid, dimBlock>>>(d_A, d_x, d_y, M, N);
+            cudaError_t err = cudaGetLastError();
+            if (err != cudaSuccess)
+            {
+                printf("CUDA Error: %s\n", cudaGetErrorString(err));
+            }
+        }
+        CHECK_CUDA(cudaEventRecord(stop));
+        CHECK_CUDA(cudaEventSynchronize(stop));
+        CHECK_CUDA(cudaEventElapsedTime(&gpu_time, start, stop));
+        CHECK_CUDA(cudaMemcpy(h_y_gpu, d_y, bytes_y, cudaMemcpyDeviceToHost));
+        printf("GPU time: %.5f seconds\n", gpu_time / nIter);
+    }
+   
+    // for (int i = 0; i < M; ++i) {
+    //     std::cout << h_y_gpu[i] << " ";
+    // }
+    // std::cout << std::endl;
     // cublas
-    cublasHandle_t blas_handle;  
+    cublasHandle_t blas_handle;
     cublasCreate(&blas_handle);
     float alpha = 1.0;
     float beta = 0;
-    checkCudaErrors(cudaMemcpy( d_y, h_y1, bytes_y, cudaMemcpyHostToDevice));
-    for (int run = 0 ; run < nIter; run ++ ) {
-        cublasSgemv (blas_handle, CUBLAS_OP_T, 
-            N, M, &alpha, 
-            d_A, N, d_x, 1, &beta, d_y, 1
-        );
+    float api_time = 0;
+    CHECK_CUDA(cudaMemcpy(d_y, h_y, bytes_y, cudaMemcpyHostToDevice));
+    cublasSgemv(blas_handle, CUBLAS_OP_T, N, M, &alpha, d_A, N, d_x, 1, &beta, d_y, 1);
+    CHECK_CUDA(cudaEventRecord(start));
+    for (int run = 0; run < nIter; run++)
+    {
+        cublasSgemv(blas_handle, CUBLAS_OP_T, N, M, &alpha, d_A, N, d_x, 1, &beta, d_y, 1);
     }
-    checkCudaErrors(cudaMemcpy( h_y1, d_y, bytes_y, cudaMemcpyDeviceToHost));
-    cublasDestroy(blas_handle); 
-    
-    double eps = 1.e-6;  // machine zero
+    CHECK_CUDA(cudaEventRecord(stop));
+    CHECK_CUDA(cudaEventSynchronize(stop));
+    CHECK_CUDA(cudaEventElapsedTime(&api_time, start, stop));
+    printf("API time: %.5f seconds\n", api_time / nIter);
+    CHECK_CUDA(cudaMemcpy(h_y_api, d_y, bytes_y, cudaMemcpyDeviceToHost));
+    cublasDestroy(blas_handle);
+    // for (int i = 0; i < M; ++i) {
+    //     std::cout << h_y_api[i] << " ";
+    // }
+    // std::cout << std::endl;
     bool correct = true;
-    for (int i = 0; i < M; i++) {
-        double abs_err = fabs(h_y[i] - h_y1[i]);
-        double dot_length = M;
-        double abs_val = fabs(h_y[i]);
-        double rel_err = abs_err / abs_val / dot_length;
-        if (rel_err > eps) {
-            printf("Error! Matrix[%05d]=%.8f, ref=%.8f error term is > %E\n",
-                    i, h_y[i], h_y1[i], eps);
-            correct = false;
-            break;
-        }
-    }
-
-    printf("%s\n", correct ? "Result= PASS" : "Result= FAIL");
-    
+    correct = checkAnswer(h_y_api, h_y_cpu, M, 1);
+    printf("API vs CPU %s\n", correct ? "Result= PASS" : "Result= FAIL");
+    correct = checkAnswer(h_y_gpu, h_y_cpu, M, 1);
+    printf("GPU vs CPU %s\n", correct ? "Result= PASS" : "Result= FAIL");
     // Free Memory
     cudaFree(d_A);
     cudaFree(d_x);
     cudaFree(d_y);
-    
+
     free(h_A);
     free(h_x);
     free(h_y);
-    free(h_y1);
+    free(h_y_api);
+    free(h_y_cpu);
+    free(h_y_gpu);
 }

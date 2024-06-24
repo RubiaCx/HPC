@@ -137,7 +137,7 @@ double gemm_tiling_thread_2d(float *h_A, float *h_B, float *h_C,
     CHECK_CUDA(cudaEventRecord(start));
     for (int run = 0; run < nIter; run++)
     {
-         Sgemm_kernel_tiling_thread_2d<BLOCK_SIZE_M, BLOCK_SIZE_K, BLOCK_SIZE_N, THREAD_SIZE><<<dimGrid, dimBlock>>>(d_A, d_B, d_C, M, K, N, alpha, beta);
+        Sgemm_kernel_tiling_thread_2d<BLOCK_SIZE_M, BLOCK_SIZE_K, BLOCK_SIZE_N, THREAD_SIZE><<<dimGrid, dimBlock>>>(d_A, d_B, d_C, M, K, N, alpha, beta);
         cudaError_t err = cudaGetLastError();
         if (err != cudaSuccess) {
             printf("CUDA Error: %s\n", cudaGetErrorString(err));
