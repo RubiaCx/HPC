@@ -3,6 +3,8 @@
 #include "cuBLAS.cuh"
 #include "gemm_1_global.cuh"
 #include "gemm_2_tiling.cuh"
+#include "gemm_3_tiling.cuh"
+#include "gemm_4_tiling.cuh"
 // cal offset from row col and ld , in row-major matrix, ld is the width of the matrix
 #define OFFSET(row, col, ld) ((row) * (ld) + (col))
 
@@ -19,6 +21,27 @@
             return EXIT_FAILURE;                                       \
         }                                                              \
     }
+
+bool checkAnswer(const float *answer, const float *result, int M, int N)
+{
+    double eps = 1.e-6; // machine zero
+    double dot_length = M;
+    for (int i = 0; i < M * N; i++)
+    {
+        int row = i / N;
+        int col = i % N;
+        double abs_err = fabs(answer[i] - result[col * M + row]);
+        double abs_val = fabs(answer[i]);
+        double rel_err = abs_err / abs_val / dot_length;
+        if (rel_err > eps)
+        {
+            printf("Error! Matrix[%05d]=%.8f, ref=%.8f error term is > %E\n", i, answer[i], result[col * M + row], eps);
+            return false;
+        }
+    }
+    return true;
+}
+
 
 int main(int argc, char **argv)
 {
@@ -43,22 +66,25 @@ int main(int argc, char **argv)
     float *h_C_gemm1  = (float *)malloc(bytes_C);
     float *h_C_gemm2  = (float *)malloc(bytes_C);
     float *h_C_gemm3  = (float *)malloc(bytes_C);
+    float *h_C_gemm4  = (float *)malloc(bytes_C);
     float *h_C_CUBLAS = (float *)malloc(bytes_C);
     // generate A
     for (int i = 0; i < M * K; i++)
     {
-        h_A[i] = i / 13;
+        h_A[i] = i / 12;
     }
     // generate B
     for (int i = 0; i < K * N; i++)
     {
-        h_B[i] = i % 13;
+        h_B[i] = i % 12;
     }
 
-    double gigaFlops_gemm1 = gemm_v1(h_A, h_B, h_C_gemm1, M, K, N);
     double gigaFlops_cublas = cuBLAS(h_A, h_B, h_C_CUBLAS, M, K, N);
-    double gigaFlops_global = gemm_global(h_A, h_B, h_C_gemm2, M, K, N);
-    double gigaFlops_tiling = gemm_tiling(h_A, h_B, h_C_gemm3, M, K, N);
+    double gigaFlops_gemm1 = gemm_v1(h_A, h_B, h_C_gemm1, M, K, N);
+    double gigaFlops_global = gemm_global(h_A, h_B, h_C_gemm1, M, K, N);
+    double gigaFlops_tiling = gemm_tiling(h_A, h_B, h_C_gemm2, M, K, N);
+    double gigaFlops_tiling_thread = gemm_tiling_thread(h_A, h_B, h_C_gemm4, M, K, N);
+    double gigaFlops_tiling_thread_2d = gemm_tiling_thread_2d(h_A, h_B, h_C_gemm4, M, K, N);
     //  for(int i = 0; i < M; i++)
     // {
     //     for(int j = 0; j < N; j++) {
@@ -73,27 +99,14 @@ int main(int argc, char **argv)
     //     }
     //     printf("\n");
     // }
-    double eps = 1.e-6; // machine zero
-    bool correct = true;
-    for (int i = 0; i < M * N; i++)
-    {
-        int row = i / N;
-        int col = i % N;
-        double abs_err = fabs(h_C_CUBLAS[i] - h_C_gemm1[col * M + row]);
-        double dot_length = M;
-        double abs_val = fabs(h_C_CUBLAS[i]);
-        double rel_err = abs_err / abs_val / dot_length;
-        if (rel_err > eps)
-        {
-            printf("Error! Matrix[%05d]=%.8f, ref=%.8f error term is > %E\n", i, h_C_CUBLAS[i], h_C_gemm1[col * M + row], eps);
-            correct = false;
-            break;
-        }
-    }
+    bool correct = checkAnswer(h_C_gemm2, h_C_CUBLAS, M, N);
+    
     printf("%s\n", correct ? "Result= PASS" : "Result= FAIL");
     printf("ratio = %f\n", gigaFlops_gemm1 / gigaFlops_cublas);
     printf("ratio global = %f\n", gigaFlops_global / gigaFlops_cublas);
     printf("ratio tiling = %f\n", gigaFlops_tiling / gigaFlops_cublas);
+    printf("ratio tiling thread = %f\n", gigaFlops_tiling_thread / gigaFlops_cublas);
+    printf("ratio tiling thread 2D = %f\n", gigaFlops_tiling_thread_2d / gigaFlops_cublas);
 
     free(h_A);
     free(h_B);

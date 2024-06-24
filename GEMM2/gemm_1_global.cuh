@@ -7,13 +7,22 @@
 #include <cuda_runtime.h>
 #include <cublas_v2.h>
 
-#include "../include/error.cuh"
-
 // cal offset from row col and ld , in row-major matrix, ld is the width of the matrix
 #define OFFSET(row, col, ld) ((row) * (ld) + (col))
 
 // transfer float4
 #define FETCH_FLOAT4(pointer) (reinterpret_cast<float4 *>(&(pointer))[0])
+
+#define CHECK_CUDA(func)                                               \
+    {                                                                  \
+        cudaError_t status = (func);                                   \
+        if (status != cudaSuccess)                                     \
+        {                                                              \
+            printf("CUDA API failed at line %d with error: %s (%d)\n", \
+                   __LINE__, cudaGetErrorString(status), status);      \
+            return EXIT_FAILURE;                                       \
+        }                                                              \
+    }
 
 /* 一共开启 M * N个thread，每个thread负责C中一个元素的计算
  * 每一个乘法运算需要读两次内存和一次FMA
@@ -24,20 +33,21 @@
     - 相同位置元素被重复读取（C中同一行元素计算共享A中同一行元素，C中同一列元素计算共享B中同一列元素）
 */
 __global__ void Sgemm_kernel_global(
-    float *__restrict__ A, float *__restrict__ B, float *__restrict__ C,
-    const int M, const int N, const int K,
+    float * A, float * B, float * C,
+    size_t M, size_t K, size_t N,
     float alpha, float beta)
 {
     int tx = blockIdx.x * blockDim.x + threadIdx.x;
     int ty = blockIdx.y * blockDim.y + threadIdx.y;
-    if(ty < M && tx < N) {
-        float c = 0;
+    
+    if(ty < M && tx < N) 
+    {
+        float c = 0.0;
         for(int i = 0; i < K; ++i){
             c += A[ty * K + i] * B[i * N + tx]; // PROBLEM
         }
         C[ty * N + tx] = beta * C[ty * N + tx] + alpha * c;
     }
-
 }
 
 double gemm_global(float *h_A, float *h_B, float *h_C, 
@@ -60,21 +70,22 @@ double gemm_global(float *h_A, float *h_B, float *h_C,
 
     double msecPerMatrixMul = 0.0;
     double gigaFlops = 0.0;
-    // double flopsPerMatrixMul = 2.0 * M * N * K;
-    double flopsPerMatrixMul = 2.0 * M * N * K - M * N;
+    double flopsPerMatrixMul = 2.0 * M * K * N;
+    // double flopsPerMatrixMul = 2.0 * M * N * K - M * N;
 
     cudaEvent_t start, stop;
     CHECK_CUDA(cudaEventCreate(&start));
     CHECK_CUDA(cudaEventCreate(&stop));
     float msecTotal = 0;
-    int nIter = 100;
+    int nIter = 1000;
 
+    dim3 dimBlock(32, 32);
+    dim3 dimGrid((M + dimBlock.x - 1) / dimBlock.x, (N + dimBlock.y - 1) / dimBlock.y);
+    Sgemm_kernel_global<<<dimGrid, dimBlock>>>(d_A, d_B, d_C, M, K, N, alpha, beta);
     CHECK_CUDA(cudaEventRecord(start));
     for (int run = 0; run < nIter; run++)
     {
-        dim3 dimBlock(32, 32);
-        dim3 dimGrid((N + dimBlock.x - 1) / dimBlock.x, (M + dimBlock.y - 1) / dimBlock.y);
-        Sgemm_kernel_global<<<dimGrid, dimBlock>>>(d_A, d_B, d_C, alpha, beta, M, N, K);
+        Sgemm_kernel_global<<<dimGrid, dimBlock>>>(d_A, d_B, d_C, M, K, N, alpha, beta);
         cudaError_t err = cudaGetLastError();
         if (err != cudaSuccess) {
             printf("CUDA Error: %s\n", cudaGetErrorString(err));

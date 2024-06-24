@@ -5,6 +5,9 @@
     - **带宽**：尽可能提高单条指令的效率
     - **延迟**：通过流水尽可能掩盖指令间的延迟
 
+nvcc main.cu -o a1 -L /usr/local/cuda/lib64 -lcudart -lcuda -lcublas
+
+https://rubiablue.notion.site/SGEMM-ce45cdf477dd4d87a866927c08997452?pvs=4
 
 ## Global memory
 - 在GPU中，一共开启$m\times n$个thread，每个thread需要读取矩阵A的一行与矩阵B的一列，而后将计算结果写回至矩阵C中
@@ -13,21 +16,37 @@
 
 - 问题：主题循环由2条load和1条FMA组成，计算访存指令比1/3，导致了访存延迟不能被隐藏，从而性能不理想
 
-- 分析：对于FP32
-  - 延迟
-    - 每一个乘法运算需要读2次内存和1次FFMA
-- 假如没有其他额外的优化（如循环展开与指令重排），相当于是两个级联的自动扶梯，一个负责运送数据，一个负责做数学运算
-- 一次 FFMA 需要等待 40s（访存）+ (1/0.5)s（第一个数据到达后第二个数据到达的时间）才能拿到所需的数据
-    - vs Peak Performance 0.5s per FFMA
-    - 这个 kernel 就完全被延迟卡住了，而无法发挥出应有的性能
+- 计算访存比：每次迭代需要进行一次FMA（乘累加）和两次全局内存读取，计算访存比1/2
+    - 较低的计算访存比无法有效隐藏访存延迟
 
-### 带宽
+- 访存量：访问全局内存，C矩阵每个元素计算需要访问$2K$个单精度浮点数，完成全部计算需要 $2*K*M*N$
+    - 全局内存访问延迟高（几百cycle）
+    - 相同位置元素被重复读取（C中同一行元素计算共享A中同一行元素，C中同一列元素计算共享B中同一列元素）
 
-- 计算访存比 = `64OP` / `132B` = **`0.48`**
-    - 1个warp做32次FFMA，对应`64OP`
-    - 需要读取读取 A 矩阵 1 个元素和 B 矩阵 32 个元素，共 `132B`
-    - C通过寄存器累加，且忽略C矩阵开销
-    - 虽然 dram 最小访问单位为一个 memory transaction，但考虑到 L1 cache 的存在也不会影响实际的计算访存比
+```python
+__global__ void Sgemm_kernel_global(
+    float * A, float * B, float * C,
+    const int M, const int N, const int K,
+    float alpha, float beta)
+{
+    int tx = blockIdx.x * blockDim.x + threadIdx.x;
+    int ty = blockIdx.y * blockDim.y + threadIdx.y;
+    if(ty < M && tx < N) {
+        float c = 0;
+        for(int i = 0; i < K; ++i){
+            c += A[ty * K + i] * B[i * N + tx]; // PROBLEM
+        }
+        C[ty * N + tx] = beta * C[ty * N + tx] + alpha * c;
+    }
+
+}
+
+```
+
+## Tiling: use the Smem
+
 
 shared memory
 
+# 参考
+- https://github.com/wangzyon/NVIDIA_SGEMM_PRACTICE

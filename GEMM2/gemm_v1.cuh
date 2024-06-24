@@ -7,12 +7,22 @@
 #include <cuda_runtime.h>
 #include <cublas_v2.h>
 
-#include "../include/error.cuh"
 // cal offset from row col and ld , in row-major matrix, ld is the width of the matrix
 #define OFFSET(row, col, ld) ((row) * (ld) + (col))
 
 // transfer float4
 #define FETCH_FLOAT4(pointer) (reinterpret_cast<float4 *>(&(pointer))[0])
+
+#define CHECK_CUDA(func)                                               \
+    {                                                                  \
+        cudaError_t status = (func);                                   \
+        if (status != cudaSuccess)                                     \
+        {                                                              \
+            printf("CUDA API failed at line %d with error: %s (%d)\n", \
+                   __LINE__, cudaGetErrorString(status), status);      \
+            return EXIT_FAILURE;                                       \
+        }                                                              \
+    }
 
 // K: ldA
 // N: ldB
@@ -261,8 +271,8 @@ double gemm_v1(float *h_A, float *h_B, float *h_C,
     double flopsPerMatrixMul = 2.0 * M * N * K;
 
     const int BLOCK_SIZE_M = 128;
-    const int BLOCK_SIZE_K = 8;
     const int BLOCK_SIZE_N = 128;
+    const int BLOCK_SIZE_K = 8;
     const int THREAD_SIZE_X = 8;
     const int THREAD_SIZE_Y = 8;
     const bool ENABLE_DOUBLE_BUFFER = false;
@@ -271,15 +281,17 @@ double gemm_v1(float *h_A, float *h_B, float *h_C,
     CHECK_CUDA(cudaEventCreate(&start));
     CHECK_CUDA(cudaEventCreate(&stop));
     float msecTotal = 0;
-    int nIter = 1;
-
+    int nIter = 1000;
+    
+    dim3 dimBlock(BLOCK_SIZE_N / THREAD_SIZE_X, BLOCK_SIZE_M / THREAD_SIZE_Y);
+    dim3 dimGrid(N / BLOCK_SIZE_N, M / BLOCK_SIZE_M);
+    Sgemm_kernel<BLOCK_SIZE_M, BLOCK_SIZE_K, BLOCK_SIZE_N, THREAD_SIZE_Y, THREAD_SIZE_X, ENABLE_DOUBLE_BUFFER>
+            <<<dimGrid, dimBlock>>>(d_A, d_B, d_C, M, N, K);
     CHECK_CUDA(cudaEventRecord(start));
     for (int run = 0; run < nIter; run++)
     {
-        dim3 dimBlock(BLOCK_SIZE_N / THREAD_SIZE_X, BLOCK_SIZE_M / THREAD_SIZE_Y);
-        dim3 dimGrid(N / BLOCK_SIZE_N, M / BLOCK_SIZE_M);
         Sgemm_kernel<BLOCK_SIZE_M, BLOCK_SIZE_K, BLOCK_SIZE_N, THREAD_SIZE_Y, THREAD_SIZE_X, ENABLE_DOUBLE_BUFFER>
-             <<<dimGrid, dimBlock>>>(d_A, d_B, d_C, M, N, K);
+            <<<dimGrid, dimBlock>>>(d_A, d_B, d_C, M, N, K);
         cudaError_t err = cudaGetLastError();
         if (err != cudaSuccess) {
             printf("CUDA Error: %s\n", cudaGetErrorString(err));
