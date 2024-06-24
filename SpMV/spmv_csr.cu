@@ -2,7 +2,7 @@
 #include <cusparse.h>         // cusparseSpMV
 #include <bits/stdc++.h>
 #include <sys/time.h>
-#include "utils/load.hpp"
+#include "../include/load.hpp"
 #define CHECK_CUDA(func)                                               \
     {                                                                  \
         cudaError_t status = (func);                                   \
