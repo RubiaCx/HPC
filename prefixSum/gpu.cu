@@ -69,8 +69,8 @@ __global__ void stone_block_addition(float *output, float *last_list, int num_bl
 int main(int argc, char **argv)
 {
     const int numElements = 16384;
-    int BLOCK_SIZE = 
-    int numblocks = numElements / BLOCK_SIZE + 1;
+    int BLOCK_SIZE =
+        int numblocks = numElements / BLOCK_SIZE + 1;
     const int TILE_DIM = 32;
     const int BLOCK_ROWS = 8;
 
@@ -92,7 +92,7 @@ int main(int argc, char **argv)
     cudaSetDevice(devId);
     // some previous code ....
     int numblocks = numElements / BLOCK_SIZE + 1;
-    
+
     stone_scan<<<dimGrid, dimBlock>>>(deviceInput, deviceOutput, numElements);
     stone_gen_Last_Item<<<dimGrid, dimBlock>>>(deviceOutput, last_list, num_blocks);
     stone_block_addition<<<dimGrid, dimBlock>>>(deviceOutput, last_list, num_blocks, numElements);

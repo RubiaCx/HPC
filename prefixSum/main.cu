@@ -20,12 +20,29 @@
 void cpuPrefixSum(float *x, float *y, int N)
 {
     y[0] = x[0];
-    for (int i = 0; i < N; i++)
+    for (int i = 1; i < N; i++)
     {
         y[i] = y[i - 1] + x[i];
     }
 }
 
+__global__ void prefixSum_Gmem_kernel(float * in, float * out, int N)
+{
+    int idx = blockIdx.x * blockDim.x + threadIdx.x;
+    if(idx < N)
+    {
+        out[idx] = in[idx];
+        __syncthreads();
+        for(int i = 1; i < N; i++)
+        {
+            if(idx >= i)
+            {
+                out[idx] = out[idx] + in[idx-i];
+            }
+            __syncthreads();
+        }
+    }
+}
 // x = blockIdx.x * blockDim.x + threadIdx.x;
 // y = blockIdx.y * blockDim.y + threadIdx.y;
 template <int BLOCK_DIM>
@@ -131,6 +148,7 @@ int main(int argc, char **argv)
     float *h_x = (float *)malloc(bytes_x);
     float *h_y = (float *)malloc(bytes_y);
     float *h_y_gpu = (float *)malloc(bytes_y);
+    float *h_y_gpu1 = (float *)malloc(bytes_y);
     float *h_y_gpu2 = (float *)malloc(bytes_y);
     float *h_y_cpu = (float *)malloc(bytes_y);
     float *d_x;
@@ -138,6 +156,7 @@ int main(int argc, char **argv)
     generate_random_value_float(h_x, N, 0.0, 2.0);
     memset(h_y, 0, N * sizeof(float));
     memset(h_y_gpu, 0, N * sizeof(float));
+    memset(h_y_gpu1, 0, N * sizeof(float));
     memset(h_y_gpu2, 0, N * sizeof(float));
     memset(h_y_cpu, 0, N * sizeof(float));
 
@@ -164,15 +183,43 @@ int main(int argc, char **argv)
     std::cout << std::endl;
 
     const int blockSize = 1024;
+
     int numBlocks = (N + blockSize - 1) / blockSize;
     dim3 dimGrid(numBlocks);  
     dim3 dimBlock(blockSize); 
-    float gpu_time = 0.0;
     cudaEvent_t start, stop;
     CHECK_CUDA(cudaEventCreate(&start));
     CHECK_CUDA(cudaEventCreate(&stop));
+
     CHECK_CUDA(cudaMalloc(&d_x, bytes_x));
     CHECK_CUDA(cudaMalloc(&d_y, bytes_y));
+
+    float gpu_time = 0.0;
+    CHECK_CUDA(cudaMemcpy(d_x, h_x, bytes_x, cudaMemcpyHostToDevice));
+    CHECK_CUDA(cudaMemcpy(d_y, h_y, bytes_y, cudaMemcpyHostToDevice));
+    prefixSum_Gmem_kernel<<<dimGrid, dimBlock>>>(d_x, d_y, N);
+    CHECK_CUDA(cudaEventRecord(start));
+    for (int run = 0; run < nIter; run++)
+    {
+        prefixSum_Gmem_kernel<<<dimGrid, dimBlock>>>(d_x, d_y, N);
+        cudaError_t err = cudaGetLastError();
+        if (err != cudaSuccess)
+        {
+            printf("CUDA Error: %s\n", cudaGetErrorString(err));
+        }
+    }
+    CHECK_CUDA(cudaEventRecord(stop));
+    CHECK_CUDA(cudaEventSynchronize(stop));
+    CHECK_CUDA(cudaEventElapsedTime(&gpu_time, start, stop));
+    CHECK_CUDA(cudaMemcpy(h_y_gpu, d_y, bytes_y, cudaMemcpyDeviceToHost));
+    printf("GPU Gmem time: %.5f seconds\n", gpu_time / nIter);
+    for (int i = 0; i < N; ++i) {
+        std::cout << h_y_gpu[i] << " ";
+    }
+    std::cout << std::endl;
+
+    // ***** shared memory ***** //
+    float gpu_time1 = 0.0;
     CHECK_CUDA(cudaMemcpy(d_x, h_x, bytes_x, cudaMemcpyHostToDevice));
     CHECK_CUDA(cudaMemcpy(d_y, h_y, bytes_y, cudaMemcpyHostToDevice));
     prefixSum_Smem_kernel<blockSize><<<dimGrid, dimBlock>>>(d_x, d_y, N);
@@ -188,13 +235,13 @@ int main(int argc, char **argv)
     }
     CHECK_CUDA(cudaEventRecord(stop));
     CHECK_CUDA(cudaEventSynchronize(stop));
-    CHECK_CUDA(cudaEventElapsedTime(&gpu_time, start, stop));
-    CHECK_CUDA(cudaMemcpy(h_y_gpu, d_y, bytes_y, cudaMemcpyDeviceToHost));
-    printf("GPU time: %.5f seconds\n", gpu_time / nIter);
-    // for (int i = 0; i < N; ++i) {
-    //     std::cout << h_y_gpu[i] << " ";
-    // }
-    // std::cout << std::endl;
+    CHECK_CUDA(cudaEventElapsedTime(&gpu_time1, start, stop));
+    CHECK_CUDA(cudaMemcpy(h_y_gpu1, d_y, bytes_y, cudaMemcpyDeviceToHost));
+    printf("GPU Smem time: %.5f seconds\n", gpu_time1 / nIter);
+    for (int i = 0; i < N; ++i) {
+        std::cout << h_y_gpu1[i] << " ";
+    }
+    std::cout << std::endl;
 
     float gpu_time2 = 0.0;
     CHECK_CUDA(cudaMemcpy(d_x, h_x, bytes_x, cudaMemcpyHostToDevice));
