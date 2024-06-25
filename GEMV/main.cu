@@ -52,7 +52,6 @@ __global__ void Sgemv_kernel_n16(value_t *__restrict__ A, value_t *__restrict__ 
                 y[row] = res;
         }
     }
-
 }
 
 // N = 32，每个warp处理1行

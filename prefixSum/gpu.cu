@@ -91,10 +91,8 @@ int main(int argc, char **argv)
 
     cudaSetDevice(devId);
     // some previous code ....
-    //@@ Initialize the grid and block dimensions here
     int numblocks = numElements / BLOCK_SIZE + 1;
     
-    //@@ Modify this to complete the functionality of the scan
     stone_scan<<<dimGrid, dimBlock>>>(deviceInput, deviceOutput, numElements);
     stone_gen_Last_Item<<<dimGrid, dimBlock>>>(deviceOutput, last_list, num_blocks);
     stone_block_addition<<<dimGrid, dimBlock>>>(deviceOutput, last_list, num_blocks, numElements);
