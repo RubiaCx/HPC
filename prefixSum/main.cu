@@ -67,15 +67,15 @@ __global__ void prefixSum_Smem_kernel(float *X, float *Y, int N)
     {
         float temp = 0;
         if (tx >= stride)
-        { // 安全左移
+        { 
             temp = shared_X[tx - stride];
         }
-        __syncthreads();
+        __syncthreads(); // 确保所有的temp都被正确赋值
         if (tx >= stride)
         {
             shared_X[tx] += temp;
         }
-        __syncthreads();
+        __syncthreads(); // 确保所有的写都已经写入
     }
 
     if (tid < N)
