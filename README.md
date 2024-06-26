@@ -1,13 +1,18 @@
-# CUDA学习笔记
+# HPC学习笔记
 
+## CUDA
+- reduce
+- prefix Sum
+- GEMV
+- GEMM
 - SpMV CSR
   - CPU
   - GPU scalar
   - GPU vector
-  
-| Algorithm       | airfoil_2d | ASIC_100ks | cage10    | cavity21  |
-|-----------------|------------|------------|-----------|-----------|
-| CPU             | 2.053513   | 5.975936   | 1.169246  | 1.005884  |
-| CUSPARSE API    | 0.014398   | 0.018259   | 0.013626  | 0.013010  |
-| Scalar GPU      | 0.006861   | 0.018827   | 0.006626  | 0.009791  |
-| Vector GPU      | 0.007618   | 0.009028   | 0.004214  | 0.004191  |
+- SpGEMM CSR
+
+## Triton
+
+## MLIR
+
+## BANG C
