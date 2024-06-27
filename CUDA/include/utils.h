@@ -2,6 +2,7 @@
 #include <iostream>
 #include <vector>
 #include <random>
+#include <cuda_fp16.h> 
 
 // Generate an array of random integers within the specified range
 // std::vector<int> int_array = generate_random_array_int(10, 0, 100);
@@ -37,6 +38,16 @@ void generate_random_value_float(float * result, int size, float lower_bound, fl
     
     for(int i = 0; i < size; ++i) {
         result[i] = dist(gen);
+    }
+}
+
+void generate_random_value_half(half * result, int size, half lower_bound, half upper_bound) {
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_real_distribution<float> dist(lower_bound, upper_bound);
+    
+    for(int i = 0; i < size; ++i) {
+        result[i] = __float2half(dist(gen));
     }
 }
 
