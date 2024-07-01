@@ -89,12 +89,16 @@ int main(int argc, char **argv)
     // std::cout << std::endl;
 
     int nIter = 100;
-    cpuPrefixSum(h_x, h_y_cpu, N);
+    for (int run = 0; run < 5; run++)
+    {
+        cpuPrefixSum(h_x, h_y_cpu, N);
+    }
     auto start_cpu = std::chrono::high_resolution_clock::now();
     for (int run = 0; run < nIter; run++)
     {
         cpuPrefixSum(h_x, h_y_cpu, N);
     }
+    // 加个同步
     auto end_cpu = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> cpu_time = end_cpu - start_cpu;
     printf("CPU time: %.5f seconds\n", cpu_time.count() / nIter);
