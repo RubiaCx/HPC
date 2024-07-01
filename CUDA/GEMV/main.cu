@@ -54,59 +54,70 @@ __global__ void Sgemv_kernel_n16(value_t *__restrict__ A, value_t *__restrict__ 
     }
 }
 
-// N = 32，每个warp处理1行
+// N 是 32 的倍数
+// A = M * N, x = y = N * 1
+// grid(M/4), block(32,4) blockDim.x=32=K, blockDim.y=4
 template <const int WARP_SIZE, class value_t>
 __global__ void Sgemv_kernel_n32(value_t *__restrict__ A, value_t *__restrict__ x, value_t *__restrict__ y,
                                  const int M, const int N)
 {
-    int tx = threadIdx.x;  // 每个线程处理一列
-    int row = blockIdx.x;  // 每个块处理一行
-
+    int tx = threadIdx.x;            // 0~31
+    int ty = threadIdx.y;            // 0~4
+    int bx = blockIdx.x;             // 0~M/4
+    int lane = tx % WARP_SIZE;       // 0~31
+    int row = bx * blockDim.y + ty;  // (0~M/4) * 4 + (0~3) 
     if (row < M)
     {
         value_t res = 0;
-        // 每个线程处理一列中的元素
-        res += A[row * N + tx] * x[tx];
-        
+        int WARP_NUM = (N + WARP_SIZE - 1) / WARP_SIZE;
+        // 若NUM_WARPS>=2，先将当前行的后面warp数据累加到第一个warp中
+        #pragma unroll
+        for(int i = 0; i < WARP_NUM; i++)
+        {
+            int col = i * WARP_SIZE + lane;
+            res += A[row * N + col] * x[col];
+        }
+
         // 对 warp 内的结果进行归约求和
         res = warpReduceSum<value_t>(res, WARP_SIZE);
-
         // 只有第一个线程写回结果到全局内存
-        if (tx == 0)
+        if (lane == 0)
             y[row] = res;
     }
 }
 
-// N = 128，每个warp处理1行，向量化指令，即一个指令处理4个元素
+// N % 128 == 0 + vec4
+// A = M * N, x = y = N * 1
+// grid(M/4), block(32,4) blockDim.x=32=K, blockDim.y=4
 template <const int WARP_SIZE, class value_t>
 __global__ void Sgemv_kernel_n128(value_t *__restrict__ A, value_t *__restrict__ x, value_t *__restrict__ y,
                                   const int M, const int N)
 {
-    int tx = threadIdx.x;  
-    int row = blockIdx.x;  // 每个块处理一行
-
+    int tx = threadIdx.x;            // 0~31
+    int ty = threadIdx.y;            // 0~4
+    int bx = blockIdx.x;             // 0~M/4
+    int lane = tx % WARP_SIZE;       // 0~31
+    int row = bx * blockDim.y + ty;  // (0~M/4) * 4 + (0~3) 
     if (row < M)
     {
         value_t res = 0;
-        int numVectorPerRow = N / 4; // 因为使用 float4，每行有 N/4 个向量
-        int numVectorsPerThread = numVectorPerRow / WARP_SIZE;  // 计算每个线程应处理多少向量
-        int vectorIndexOffset = tx * numVectorsPerThread;       // 每个线程处理向量的起始索引
-
-        // 确保不越界
-        int maxVectorIndex = min((tx + 1) * numVectorsPerThread, numVectorPerRow);
-
-        for (int i = vectorIndexOffset; i < maxVectorIndex; i++)
+        // process 4*WARP_SIZE elements per warp.
+        int WARP_NUM = (N + WARP_SIZE - 1) / WARP_SIZE;
+        int TOTAL_NUM = (WARP_NUM + 4 - 1) / 4;
+        #pragma unroll
+        for(int i = 0; i < TOTAL_NUM; i++)
         {
-            int col = i * 4;  // 每个向量对应四个列
-            float4 vecA = reinterpret_cast<float4*>(&A[row * N + col])[0];
-            float4 vecX = reinterpret_cast<float4*>(&x[col])[0];
+            int col = (i * WARP_SIZE + lane) * 4;
+            float4 vecA = FETCH_FLOAT4(A[row * N + col]);
+            float4 vecX = FETCH_FLOAT4(x[col]);
             res += vecA.x * vecX.x + vecA.y * vecX.y + vecA.z * vecX.z + vecA.w * vecX.w;
+
         }
 
+        // 对 warp 内的结果进行归约求和
         res = warpReduceSum<value_t>(res, WARP_SIZE);
-
-        // Write the result to global memory
-        if (tx == 0)
+        // 只有第一个线程写回结果到全局内存
+        if (lane == 0)
             y[row] = res;
     }
 }
@@ -242,9 +253,9 @@ int main(int argc, char **argv)
         CHECK_CUDA(cudaMemcpy(h_y_gpu, d_y, bytes_y, cudaMemcpyDeviceToHost));
         printf("GPU time: %.5f seconds\n", gpu_time / nIter);
     }
-    else if(N == 32) {
-        dim3 dimGrid(M);  
-        dim3 dimBlock(WARP_SIZE); 
+    else if(N % 32 == 0) {
+        dim3 dimGrid(M/4);  
+        dim3 dimBlock(WARP_SIZE, 4); 
         Sgemv_kernel_n32<WARP_SIZE, float><<<dimGrid, dimBlock>>>(d_A, d_x, d_y, M, N);
         CHECK_CUDA(cudaEventRecord(start));
         for (int run = 0; run < nIter; run++)
