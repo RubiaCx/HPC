@@ -394,4 +394,6 @@ with open("results.json", "w") as f:
 
 # 32760/32768 - average speedup: 0.962 (A100)
 # 990/1000 - average speedup: 1.063 (3090 RTX with while loop and 2 tiles disabled / enabled)
-# 990/1000 - average speedup: 1.063 (3090 RTX with while loop and 2 tiles disabled / enabled)
+# 990/1000 - average speedup: 1.016（V100）
+# 990/32768 - average speedup: 0.608（A100)
+# 100/32768 - average speedup: 0.901
