@@ -1,0 +1,4625 @@
+m 1848
+torch used time 0.42 ms
+
+cutlass GemmBasic used time 0.39 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 1.59 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 3072
+torch used time 0.70 ms
+
+cutlass GemmBasic used time 0.60 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 1.77 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 4004
+torch used time 0.80 ms
+
+cutlass GemmBasic used time 0.78 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 1.98 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 10140
+torch used time 1.85 ms
+
+cutlass GemmBasic used time 1.92 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 2.98 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 10530
+torch used time 1.90 ms
+
+cutlass GemmBasic used time 2.06 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 2.16 ms
+torch-GemmStreamK diff max 32.0
+
+=========================
+m 12064
+torch used time 2.23 ms
+
+cutlass GemmBasic used time 2.42 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 6.17 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 13702
+torch used time 2.34 ms
+
+cutlass GemmBasic used time 2.80 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 2.38 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 14976
+torch used time 2.61 ms
+
+cutlass GemmBasic used time 3.10 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 2.58 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 18200
+torch used time 3.13 ms
+
+cutlass GemmBasic used time 3.84 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.49 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 22308
+torch used time 3.80 ms
+
+cutlass GemmBasic used time 4.79 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.99 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 33696
+torch used time 5.71 ms
+
+cutlass GemmBasic used time 7.24 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 6.81 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 4158
+torch used time 0.79 ms
+
+cutlass GemmBasic used time 0.77 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 1.99 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 8424
+torch used time 1.52 ms
+
+cutlass GemmBasic used time 1.58 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 2.69 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 9450
+torch used time 1.80 ms
+
+cutlass GemmBasic used time 1.78 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 2.00 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 32292
+torch used time 5.60 ms
+
+cutlass GemmBasic used time 6.97 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 6.67 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 4312
+torch used time 0.81 ms
+
+cutlass GemmBasic used time 0.81 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 1.89 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 8736
+torch used time 1.58 ms
+
+cutlass GemmBasic used time 1.63 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 2.76 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 12992
+torch used time 2.28 ms
+
+cutlass GemmBasic used time 2.68 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.45 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 19600
+torch used time 3.42 ms
+
+cutlass GemmBasic used time 4.18 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.55 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 28896
+torch used time 4.94 ms
+
+cutlass GemmBasic used time 6.24 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 9.81 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 33488
+torch used time 5.70 ms
+
+cutlass GemmBasic used time 7.21 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 6.84 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 4466
+torch used time 0.81 ms
+
+cutlass GemmBasic used time 0.81 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 2.02 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 9048
+torch used time 1.57 ms
+
+cutlass GemmBasic used time 1.68 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 2.79 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 9744
+torch used time 1.85 ms
+
+cutlass GemmBasic used time 1.88 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 2.95 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 14790
+torch used time 2.62 ms
+
+cutlass GemmBasic used time 3.07 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.75 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 20880
+torch used time 3.70 ms
+
+cutlass GemmBasic used time 4.47 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.90 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 22533
+torch used time 3.86 ms
+
+cutlass GemmBasic used time 4.81 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.06 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 24882
+torch used time 4.26 ms
+
+cutlass GemmBasic used time 5.34 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.44 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 27347
+torch used time 4.62 ms
+
+cutlass GemmBasic used time 5.86 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.70 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 29232
+torch used time 5.01 ms
+
+cutlass GemmBasic used time 6.31 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 7.25 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 4620
+torch used time 0.98 ms
+
+cutlass GemmBasic used time 0.93 ms
+torch-GemmBasic diff max 64.0
+
+cutlass GemmStreamK used time 12.42 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 8970
+torch used time 1.58 ms
+
+cutlass GemmBasic used time 1.65 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 2.79 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 10080
+torch used time 1.86 ms
+
+cutlass GemmBasic used time 1.92 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.73 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 12150
+torch used time 2.23 ms
+
+cutlass GemmBasic used time 2.42 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.32 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 15300
+torch used time 2.67 ms
+
+cutlass GemmBasic used time 3.20 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.83 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 15810
+torch used time 2.72 ms
+
+cutlass GemmBasic used time 3.29 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.77 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 16740
+torch used time 2.99 ms
+
+cutlass GemmBasic used time 3.53 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.08 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 21600
+torch used time 3.76 ms
+
+cutlass GemmBasic used time 4.60 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.74 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 23940
+torch used time 4.14 ms
+
+cutlass GemmBasic used time 5.12 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.28 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 25740
+torch used time 4.49 ms
+
+cutlass GemmBasic used time 5.55 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.58 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 28290
+torch used time 4.90 ms
+
+cutlass GemmBasic used time 6.09 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 9.44 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 30960
+torch used time 5.29 ms
+
+cutlass GemmBasic used time 6.64 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 9.52 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 33000
+torch used time 5.66 ms
+
+cutlass GemmBasic used time 7.07 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 6.77 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 4774
+torch used time 0.98 ms
+
+cutlass GemmBasic used time 0.94 ms
+torch-GemmBasic diff max 64.0
+
+cutlass GemmStreamK used time 1.21 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 9269
+torch used time 1.80 ms
+
+cutlass GemmBasic used time 1.77 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 2.86 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 9672
+torch used time 1.80 ms
+
+cutlass GemmBasic used time 1.83 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 2.92 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 10850
+torch used time 1.90 ms
+
+cutlass GemmBasic used time 2.11 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.07 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 12090
+torch used time 2.23 ms
+
+cutlass GemmBasic used time 2.42 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.31 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 13888
+torch used time 2.56 ms
+
+cutlass GemmBasic used time 2.94 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.60 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 14384
+torch used time 2.61 ms
+
+cutlass GemmBasic used time 3.02 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.70 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 15810
+torch used time 2.72 ms
+
+cutlass GemmBasic used time 3.28 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.77 ms
+torch-GemmStreamK diff max 32.0
+
+=========================
+m 28520
+torch used time 4.90 ms
+
+cutlass GemmBasic used time 6.11 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 10.28 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 31248
+torch used time 5.33 ms
+
+cutlass GemmBasic used time 6.75 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 11.40 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 34100
+torch used time 5.77 ms
+
+cutlass GemmBasic used time 7.30 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 6.97 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 4928
+torch used time 0.99 ms
+
+cutlass GemmBasic used time 0.96 ms
+torch-GemmBasic diff max 64.0
+
+cutlass GemmStreamK used time 2.13 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 11200
+torch used time 1.96 ms
+
+cutlass GemmBasic used time 2.18 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.02 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 16864
+torch used time 3.00 ms
+
+cutlass GemmBasic used time 3.54 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.10 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 18432
+torch used time 3.11 ms
+
+cutlass GemmBasic used time 3.86 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.14 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 20672
+torch used time 3.49 ms
+
+cutlass GemmBasic used time 4.38 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.52 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 21280
+torch used time 3.76 ms
+
+cutlass GemmBasic used time 4.55 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.86 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 23040
+torch used time 3.91 ms
+
+cutlass GemmBasic used time 4.90 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.92 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 25536
+torch used time 4.47 ms
+
+cutlass GemmBasic used time 5.51 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 19.07 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 28160
+torch used time 4.86 ms
+
+cutlass GemmBasic used time 6.07 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 10.96 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 29440
+torch used time 4.99 ms
+
+cutlass GemmBasic used time 6.34 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 6.84 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 30176
+torch used time 5.24 ms
+
+cutlass GemmBasic used time 6.52 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.44 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 30912
+torch used time 5.30 ms
+
+cutlass GemmBasic used time 6.63 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 6.41 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 32256
+torch used time 5.40 ms
+
+cutlass GemmBasic used time 6.89 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.43 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 33024
+torch used time 5.66 ms
+
+cutlass GemmBasic used time 7.08 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 6.78 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 5082
+torch used time 0.99 ms
+
+cutlass GemmBasic used time 0.96 ms
+torch-GemmBasic diff max 64.0
+
+cutlass GemmStreamK used time 2.17 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 9867
+torch used time 1.85 ms
+
+cutlass GemmBasic used time 1.87 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 9.89 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 10296
+torch used time 1.85 ms
+
+cutlass GemmBasic used time 1.96 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 1.81 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 11550
+torch used time 2.18 ms
+
+cutlass GemmBasic used time 2.31 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 7.67 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 15312
+torch used time 2.67 ms
+
+cutlass GemmBasic used time 3.20 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 10.04 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 16830
+torch used time 2.99 ms
+
+cutlass GemmBasic used time 3.54 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.09 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 20691
+torch used time 3.49 ms
+
+cutlass GemmBasic used time 4.37 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.54 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 21318
+torch used time 3.76 ms
+
+cutlass GemmBasic used time 4.55 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.25 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 31119
+torch used time 5.33 ms
+
+cutlass GemmBasic used time 6.72 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 6.48 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 34056
+torch used time 5.79 ms
+
+cutlass GemmBasic used time 7.34 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 6.97 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 5236
+torch used time 1.09 ms
+
+cutlass GemmBasic used time 0.99 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 2.20 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 10166
+torch used time 1.86 ms
+
+cutlass GemmBasic used time 1.92 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.08 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 11900
+torch used time 2.18 ms
+
+cutlass GemmBasic used time 2.37 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.75 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 13260
+torch used time 2.33 ms
+
+cutlass GemmBasic used time 2.74 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 6.57 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 13770
+torch used time 2.36 ms
+
+cutlass GemmBasic used time 2.84 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 2.39 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 15776
+torch used time 2.73 ms
+
+cutlass GemmBasic used time 3.29 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.78 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 20196
+torch used time 3.47 ms
+
+cutlass GemmBasic used time 4.29 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.66 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 21964
+torch used time 3.80 ms
+
+cutlass GemmBasic used time 4.71 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.93 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 22610
+torch used time 3.86 ms
+
+cutlass GemmBasic used time 4.80 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.07 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 23800
+torch used time 4.14 ms
+
+cutlass GemmBasic used time 5.09 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.25 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 24480
+torch used time 4.21 ms
+
+cutlass GemmBasic used time 5.27 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.35 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 25160
+torch used time 4.26 ms
+
+cutlass GemmBasic used time 5.39 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.78 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 27132
+torch used time 4.61 ms
+
+cutlass GemmBasic used time 5.82 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 7.54 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 29172
+torch used time 5.15 ms
+
+cutlass GemmBasic used time 6.29 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 6.12 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 5390
+torch used time 1.09 ms
+
+cutlass GemmBasic used time 1.01 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 2.07 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 10465
+torch used time 1.90 ms
+
+cutlass GemmBasic used time 2.05 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.02 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 12250
+torch used time 2.23 ms
+
+cutlass GemmBasic used time 2.43 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.32 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 16240
+torch used time 2.94 ms
+
+cutlass GemmBasic used time 3.43 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.97 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 16800
+torch used time 2.99 ms
+
+cutlass GemmBasic used time 3.53 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.08 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 17850
+torch used time 3.09 ms
+
+cutlass GemmBasic used time 3.75 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.27 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 18445
+torch used time 3.32 ms
+
+cutlass GemmBasic used time 3.95 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.36 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 22610
+torch used time 3.86 ms
+
+cutlass GemmBasic used time 4.82 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 8.01 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 23275
+torch used time 4.08 ms
+
+cutlass GemmBasic used time 5.00 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 7.50 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 25200
+torch used time 4.26 ms
+
+cutlass GemmBasic used time 5.39 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 9.10 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 27930
+torch used time 5.05 ms
+
+cutlass GemmBasic used time 6.04 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.95 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 30800
+torch used time 5.30 ms
+
+cutlass GemmBasic used time 6.62 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 6.27 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 32200
+torch used time 5.40 ms
+
+cutlass GemmBasic used time 6.89 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.44 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 33005
+torch used time 5.66 ms
+
+cutlass GemmBasic used time 7.10 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 6.77 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 35280
+torch used time 6.04 ms
+
+cutlass GemmBasic used time 7.56 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 7.15 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 5544
+torch used time 1.09 ms
+
+cutlass GemmBasic used time 1.02 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 2.22 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 10764
+torch used time 1.90 ms
+
+cutlass GemmBasic used time 2.11 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.38 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 12600
+torch used time 2.23 ms
+
+cutlass GemmBasic used time 2.54 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 2.18 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 13104
+torch used time 2.28 ms
+
+cutlass GemmBasic used time 2.73 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 7.13 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 15120
+torch used time 2.68 ms
+
+cutlass GemmBasic used time 3.20 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 7.70 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 16128
+torch used time 2.75 ms
+
+cutlass GemmBasic used time 3.34 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 2.77 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 16704
+torch used time 3.00 ms
+
+cutlass GemmBasic used time 3.53 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.08 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 18360
+torch used time 3.13 ms
+
+cutlass GemmBasic used time 3.86 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.14 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 18972
+torch used time 3.37 ms
+
+cutlass GemmBasic used time 4.02 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.46 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 20088
+torch used time 3.42 ms
+
+cutlass GemmBasic used time 4.27 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.61 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 20736
+torch used time 3.49 ms
+
+cutlass GemmBasic used time 4.40 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.52 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 21384
+torch used time 3.75 ms
+
+cutlass GemmBasic used time 4.56 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.84 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 22572
+torch used time 3.88 ms
+
+cutlass GemmBasic used time 4.81 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 10.14 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 23256
+torch used time 4.09 ms
+
+cutlass GemmBasic used time 5.00 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.03 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 23940
+torch used time 4.15 ms
+
+cutlass GemmBasic used time 5.13 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.29 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 25200
+torch used time 4.29 ms
+
+cutlass GemmBasic used time 5.40 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.45 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 28728
+torch used time 4.96 ms
+
+cutlass GemmBasic used time 6.16 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.88 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 30888
+torch used time 5.28 ms
+
+cutlass GemmBasic used time 6.63 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 6.43 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 33948
+torch used time 5.75 ms
+
+cutlass GemmBasic used time 7.31 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 6.96 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 5698
+torch used time 1.09 ms
+
+cutlass GemmBasic used time 1.02 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 1.05 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 11063
+torch used time 1.96 ms
+
+cutlass GemmBasic used time 2.16 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.14 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 12432
+torch used time 2.23 ms
+
+cutlass GemmBasic used time 2.51 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.47 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 12950
+torch used time 2.28 ms
+
+cutlass GemmBasic used time 2.68 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.16 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 13468
+torch used time 2.35 ms
+
+cutlass GemmBasic used time 2.79 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.98 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 14430
+torch used time 2.61 ms
+
+cutlass GemmBasic used time 3.02 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.71 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 16576
+torch used time 2.96 ms
+
+cutlass GemmBasic used time 3.49 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.08 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 17168
+torch used time 3.01 ms
+
+cutlass GemmBasic used time 3.61 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 2.96 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 18870
+torch used time 3.33 ms
+
+cutlass GemmBasic used time 4.01 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.46 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 19499
+torch used time 3.37 ms
+
+cutlass GemmBasic used time 4.11 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.33 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 21312
+torch used time 3.75 ms
+
+cutlass GemmBasic used time 4.54 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.84 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 21978
+torch used time 3.80 ms
+
+cutlass GemmBasic used time 4.71 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.94 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 23199
+torch used time 4.08 ms
+
+cutlass GemmBasic used time 4.98 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.28 ms
+torch-GemmStreamK diff max 32.0
+
+=========================
+m 27380
+torch used time 4.64 ms
+
+cutlass GemmBasic used time 5.87 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 8.91 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 28749
+torch used time 4.95 ms
+
+cutlass GemmBasic used time 6.16 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.88 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 29526
+torch used time 5.00 ms
+
+cutlass GemmBasic used time 6.35 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 6.20 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 34891
+torch used time 6.00 ms
+
+cutlass GemmBasic used time 7.52 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 7.12 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 5852
+torch used time 1.14 ms
+
+cutlass GemmBasic used time 1.12 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 2.27 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 11856
+torch used time 2.18 ms
+
+cutlass GemmBasic used time 2.37 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.28 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 13832
+torch used time 2.56 ms
+
+cutlass GemmBasic used time 2.93 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.59 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 15960
+torch used time 2.72 ms
+
+cutlass GemmBasic used time 3.33 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.94 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 17632
+torch used time 3.06 ms
+
+cutlass GemmBasic used time 3.72 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.23 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 19380
+torch used time 3.38 ms
+
+cutlass GemmBasic used time 4.09 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 6.23 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 20026
+torch used time 3.42 ms
+
+cutlass GemmBasic used time 4.26 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.58 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 21888
+torch used time 3.75 ms
+
+cutlass GemmBasic used time 4.66 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.71 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 22572
+torch used time 3.88 ms
+
+cutlass GemmBasic used time 4.81 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.06 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 24548
+torch used time 4.20 ms
+
+cutlass GemmBasic used time 5.29 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.36 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 25270
+torch used time 4.29 ms
+
+cutlass GemmBasic used time 5.43 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.30 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 27360
+torch used time 4.64 ms
+
+cutlass GemmBasic used time 5.87 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.68 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 29526
+torch used time 5.22 ms
+
+cutlass GemmBasic used time 6.34 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 6.38 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 30324
+torch used time 5.24 ms
+
+cutlass GemmBasic used time 6.53 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 9.21 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 32604
+torch used time 5.61 ms
+
+cutlass GemmBasic used time 7.01 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 6.73 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 33440
+torch used time 5.70 ms
+
+cutlass GemmBasic used time 7.20 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 6.86 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 6006
+torch used time 1.14 ms
+
+cutlass GemmBasic used time 1.13 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 1.41 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 11661
+torch used time 2.18 ms
+
+cutlass GemmBasic used time 2.33 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 2.37 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 12168
+torch used time 2.23 ms
+
+cutlass GemmBasic used time 2.44 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.33 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 13104
+torch used time 2.28 ms
+
+cutlass GemmBasic used time 2.72 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.46 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 19890
+torch used time 3.43 ms
+
+cutlass GemmBasic used time 4.23 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.59 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 25194
+torch used time 4.26 ms
+
+cutlass GemmBasic used time 5.41 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.44 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 25935
+torch used time 4.52 ms
+
+cutlass GemmBasic used time 5.58 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.79 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 27300
+torch used time 4.65 ms
+
+cutlass GemmBasic used time 5.85 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.70 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 28080
+torch used time 4.85 ms
+
+cutlass GemmBasic used time 6.06 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.99 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 33462
+torch used time 5.72 ms
+
+cutlass GemmBasic used time 7.21 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 6.87 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 6160
+torch used time 1.14 ms
+
+cutlass GemmBasic used time 1.16 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 2.32 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 11960
+torch used time 2.18 ms
+
+cutlass GemmBasic used time 2.37 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.31 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 12480
+torch used time 2.23 ms
+
+cutlass GemmBasic used time 2.51 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.36 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 13440
+torch used time 2.33 ms
+
+cutlass GemmBasic used time 2.79 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.54 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 14560
+torch used time 2.62 ms
+
+cutlass GemmBasic used time 3.03 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.72 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 17920
+torch used time 3.10 ms
+
+cutlass GemmBasic used time 3.77 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.30 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 18560
+torch used time 3.33 ms
+
+cutlass GemmBasic used time 3.95 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 9.42 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 19760
+torch used time 3.43 ms
+
+cutlass GemmBasic used time 4.21 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.70 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 21080
+torch used time 3.72 ms
+
+cutlass GemmBasic used time 4.50 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.81 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 23040
+torch used time 3.91 ms
+
+cutlass GemmBasic used time 4.90 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.92 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 25080
+torch used time 4.26 ms
+
+cutlass GemmBasic used time 5.37 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.30 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 31080
+torch used time 5.32 ms
+
+cutlass GemmBasic used time 6.67 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.23 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 6314
+torch used time 1.18 ms
+
+cutlass GemmBasic used time 1.18 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 2.38 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 12259
+torch used time 2.23 ms
+
+cutlass GemmBasic used time 2.44 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.33 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 12792
+torch used time 2.28 ms
+
+cutlass GemmBasic used time 2.63 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.41 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 14350
+torch used time 2.61 ms
+
+cutlass GemmBasic used time 3.01 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.71 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 18368
+torch used time 3.11 ms
+
+cutlass GemmBasic used time 3.86 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.14 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 23616
+torch used time 4.13 ms
+
+cutlass GemmBasic used time 5.07 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 8.71 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 26486
+torch used time 4.57 ms
+
+cutlass GemmBasic used time 5.67 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.47 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 28700
+torch used time 4.96 ms
+
+cutlass GemmBasic used time 6.15 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.86 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 29520
+torch used time 5.00 ms
+
+cutlass GemmBasic used time 6.34 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 6.20 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 31857
+torch used time 5.41 ms
+
+cutlass GemmBasic used time 6.84 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 6.59 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 32718
+torch used time 5.64 ms
+
+cutlass GemmBasic used time 7.02 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 6.75 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 6468
+torch used time 1.19 ms
+
+cutlass GemmBasic used time 1.19 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 2.38 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 12558
+torch used time 2.24 ms
+
+cutlass GemmBasic used time 2.54 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 2.18 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 13104
+torch used time 2.28 ms
+
+cutlass GemmBasic used time 2.73 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 9.04 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 14700
+torch used time 2.62 ms
+
+cutlass GemmBasic used time 3.07 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.62 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 17010
+torch used time 3.00 ms
+
+cutlass GemmBasic used time 3.58 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.99 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 18816
+torch used time 3.34 ms
+
+cutlass GemmBasic used time 3.99 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.42 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 21420
+torch used time 3.75 ms
+
+cutlass GemmBasic used time 4.56 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.86 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 22134
+torch used time 3.81 ms
+
+cutlass GemmBasic used time 4.73 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.07 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 24192
+torch used time 4.15 ms
+
+cutlass GemmBasic used time 5.17 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.09 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 24948
+torch used time 4.25 ms
+
+cutlass GemmBasic used time 5.34 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.44 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 27930
+torch used time 4.87 ms
+
+cutlass GemmBasic used time 6.02 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.94 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 29400
+torch used time 5.00 ms
+
+cutlass GemmBasic used time 6.32 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 6.58 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 32256
+torch used time 5.46 ms
+
+cutlass GemmBasic used time 6.90 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.45 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 32634
+torch used time 5.62 ms
+
+cutlass GemmBasic used time 7.02 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 6.71 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 33516
+torch used time 5.70 ms
+
+cutlass GemmBasic used time 7.21 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 6.86 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 6622
+torch used time 1.19 ms
+
+cutlass GemmBasic used time 1.21 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 2.27 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 12857
+torch used time 2.28 ms
+
+cutlass GemmBasic used time 2.67 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 2.55 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 13416
+torch used time 2.33 ms
+
+cutlass GemmBasic used time 2.78 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.52 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 15652
+torch used time 2.72 ms
+
+cutlass GemmBasic used time 3.28 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.91 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 17415
+torch used time 3.04 ms
+
+cutlass GemmBasic used time 3.71 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.31 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 19264
+torch used time 3.38 ms
+
+cutlass GemmBasic used time 4.08 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 8.12 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 19952
+torch used time 3.43 ms
+
+cutlass GemmBasic used time 4.23 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 8.75 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 24768
+torch used time 4.25 ms
+
+cutlass GemmBasic used time 5.33 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.43 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 25542
+torch used time 4.46 ms
+
+cutlass GemmBasic used time 5.50 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.68 ms
+torch-GemmStreamK diff max 32.0
+
+=========================
+m 26961
+torch used time 4.62 ms
+
+cutlass GemmBasic used time 5.81 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.75 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 27778
+torch used time 4.85 ms
+
+cutlass GemmBasic used time 6.00 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.05 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 30100
+torch used time 5.24 ms
+
+cutlass GemmBasic used time 6.50 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.44 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 33411
+torch used time 5.72 ms
+
+cutlass GemmBasic used time 7.21 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 6.97 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 34314
+torch used time 5.78 ms
+
+cutlass GemmBasic used time 7.37 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 9.05 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 6776
+torch used time 1.19 ms
+
+cutlass GemmBasic used time 1.22 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 2.41 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 13156
+torch used time 2.28 ms
+
+cutlass GemmBasic used time 2.74 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.46 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 17160
+torch used time 2.95 ms
+
+cutlass GemmBasic used time 3.59 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 2.95 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 17820
+torch used time 3.09 ms
+
+cutlass GemmBasic used time 3.75 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.28 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 19712
+torch used time 3.43 ms
+
+cutlass GemmBasic used time 4.19 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.56 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 20416
+torch used time 3.49 ms
+
+cutlass GemmBasic used time 4.32 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.55 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 23188
+torch used time 4.09 ms
+
+cutlass GemmBasic used time 4.99 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.28 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 24552
+torch used time 4.20 ms
+
+cutlass GemmBasic used time 5.27 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.35 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 25344
+torch used time 4.29 ms
+
+cutlass GemmBasic used time 5.42 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.30 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 27588
+torch used time 4.68 ms
+
+cutlass GemmBasic used time 5.91 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.66 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 28424
+torch used time 4.91 ms
+
+cutlass GemmBasic used time 6.12 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 8.52 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 31680
+torch used time 5.39 ms
+
+cutlass GemmBasic used time 6.82 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 6.58 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 6930
+torch used time 1.42 ms
+
+cutlass GemmBasic used time 1.33 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 2.46 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 14040
+torch used time 2.57 ms
+
+cutlass GemmBasic used time 2.96 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 2.75 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 15750
+torch used time 2.72 ms
+
+cutlass GemmBasic used time 3.28 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.79 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 22950
+torch used time 3.91 ms
+
+cutlass GemmBasic used time 4.88 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.92 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 23715
+torch used time 4.14 ms
+
+cutlass GemmBasic used time 5.09 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.25 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 25920
+torch used time 4.52 ms
+
+cutlass GemmBasic used time 5.57 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.62 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 28215
+torch used time 4.90 ms
+
+cutlass GemmBasic used time 6.08 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 12.70 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 29070
+torch used time 4.95 ms
+
+cutlass GemmBasic used time 6.27 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 13.97 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 29925
+torch used time 5.06 ms
+
+cutlass GemmBasic used time 6.42 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.07 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 32400
+torch used time 5.62 ms
+
+cutlass GemmBasic used time 7.00 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.82 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 34965
+torch used time 6.02 ms
+
+cutlass GemmBasic used time 7.53 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 7.21 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 7084
+torch used time 1.42 ms
+
+cutlass GemmBasic used time 1.33 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 1.61 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 13754
+torch used time 2.34 ms
+
+cutlass GemmBasic used time 2.84 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 2.37 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 14352
+torch used time 2.61 ms
+
+cutlass GemmBasic used time 3.02 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.69 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 18630
+torch used time 3.32 ms
+
+cutlass GemmBasic used time 4.04 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.53 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 19320
+torch used time 3.39 ms
+
+cutlass GemmBasic used time 4.07 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 12.68 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 23460
+torch used time 4.10 ms
+
+cutlass GemmBasic used time 5.04 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 8.71 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 24242
+torch used time 4.19 ms
+
+cutlass GemmBasic used time 5.24 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.33 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 26496
+torch used time 4.52 ms
+
+cutlass GemmBasic used time 5.68 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.48 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 27324
+torch used time 4.62 ms
+
+cutlass GemmBasic used time 5.86 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.70 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 30590
+torch used time 5.28 ms
+
+cutlass GemmBasic used time 6.59 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 6.38 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 32200
+torch used time 5.44 ms
+
+cutlass GemmBasic used time 6.90 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.44 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 34040
+torch used time 5.77 ms
+
+cutlass GemmBasic used time 7.32 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 11.15 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 7238
+torch used time 1.42 ms
+
+cutlass GemmBasic used time 1.36 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 848.66 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 16450
+torch used time 2.96 ms
+
+cutlass GemmBasic used time 3.48 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.05 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 17108
+torch used time 3.01 ms
+
+cutlass GemmBasic used time 3.60 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.16 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 18330
+torch used time 3.13 ms
+
+cutlass GemmBasic used time 3.86 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.15 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 19035
+torch used time 3.38 ms
+
+cutlass GemmBasic used time 4.05 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.47 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 21808
+torch used time 3.77 ms
+
+cutlass GemmBasic used time 4.64 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.72 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 24769
+torch used time 4.25 ms
+
+cutlass GemmBasic used time 5.31 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.44 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 27918
+torch used time 4.86 ms
+
+cutlass GemmBasic used time 6.03 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.96 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 29469
+torch used time 5.03 ms
+
+cutlass GemmBasic used time 6.35 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 10.93 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 32900
+torch used time 5.67 ms
+
+cutlass GemmBasic used time 7.08 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 8.58 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 33840
+torch used time 5.75 ms
+
+cutlass GemmBasic used time 7.28 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 6.91 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 7392
+torch used time 1.42 ms
+
+cutlass GemmBasic used time 1.36 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 2.55 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 14352
+torch used time 2.61 ms
+
+cutlass GemmBasic used time 3.02 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.69 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 14976
+torch used time 2.61 ms
+
+cutlass GemmBasic used time 3.12 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 2.57 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 16128
+torch used time 2.75 ms
+
+cutlass GemmBasic used time 3.35 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 2.77 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 16800
+torch used time 3.00 ms
+
+cutlass GemmBasic used time 3.53 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.11 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 17472
+torch used time 3.06 ms
+
+cutlass GemmBasic used time 3.70 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.32 ms
+torch-GemmStreamK diff max 32.0
+
+=========================
+m 18720
+torch used time 3.34 ms
+
+cutlass GemmBasic used time 3.98 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.69 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 19440
+torch used time 3.38 ms
+
+cutlass GemmBasic used time 4.09 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.52 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 20160
+torch used time 3.47 ms
+
+cutlass GemmBasic used time 4.28 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 845.58 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 21504
+torch used time 3.76 ms
+
+cutlass GemmBasic used time 4.58 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.86 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 22272
+torch used time 3.82 ms
+
+cutlass GemmBasic used time 4.76 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 6.68 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 24480
+torch used time 4.20 ms
+
+cutlass GemmBasic used time 5.27 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.36 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 25296
+torch used time 4.29 ms
+
+cutlass GemmBasic used time 5.42 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.30 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 26784
+torch used time 4.59 ms
+
+cutlass GemmBasic used time 5.79 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 8.75 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 27648
+torch used time 4.64 ms
+
+cutlass GemmBasic used time 5.96 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.68 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 28512
+torch used time 4.92 ms
+
+cutlass GemmBasic used time 6.11 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 10.70 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 30096
+torch used time 5.23 ms
+
+cutlass GemmBasic used time 6.50 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 8.37 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 31008
+torch used time 5.32 ms
+
+cutlass GemmBasic used time 6.70 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.25 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 31920
+torch used time 5.41 ms
+
+cutlass GemmBasic used time 6.84 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 11.08 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 33600
+torch used time 5.71 ms
+
+cutlass GemmBasic used time 7.25 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 6.08 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 34560
+torch used time 5.78 ms
+
+cutlass GemmBasic used time 7.40 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.83 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 7546
+torch used time 1.47 ms
+
+cutlass GemmBasic used time 1.41 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 2.69 ms
+torch-GemmStreamK diff max 32.0
+
+=========================
+m 14651
+torch used time 2.62 ms
+
+cutlass GemmBasic used time 3.11 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.59 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 15288
+torch used time 2.67 ms
+
+cutlass GemmBasic used time 3.20 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 6.00 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 17150
+torch used time 3.00 ms
+
+cutlass GemmBasic used time 3.58 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 6.56 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 17836
+torch used time 3.10 ms
+
+cutlass GemmBasic used time 3.76 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.29 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 18326
+torch used time 3.14 ms
+
+cutlass GemmBasic used time 3.86 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.15 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 19110
+torch used time 3.43 ms
+
+cutlass GemmBasic used time 4.04 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.48 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 19845
+torch used time 3.44 ms
+
+cutlass GemmBasic used time 4.23 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.59 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 20580
+torch used time 3.52 ms
+
+cutlass GemmBasic used time 4.36 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.70 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 21952
+torch used time 3.81 ms
+
+cutlass GemmBasic used time 4.71 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.93 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 22050
+torch used time 3.82 ms
+
+cutlass GemmBasic used time 4.73 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.38 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 22736
+torch used time 3.88 ms
+
+cutlass GemmBasic used time 4.85 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.39 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 24990
+torch used time 4.25 ms
+
+cutlass GemmBasic used time 5.36 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 7.99 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 25823
+torch used time 4.49 ms
+
+cutlass GemmBasic used time 5.55 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.60 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 27342
+torch used time 4.64 ms
+
+cutlass GemmBasic used time 5.85 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.68 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 28224
+torch used time 4.90 ms
+
+cutlass GemmBasic used time 6.09 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.99 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 29106
+torch used time 4.95 ms
+
+cutlass GemmBasic used time 6.28 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 7.58 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 30723
+torch used time 5.30 ms
+
+cutlass GemmBasic used time 6.60 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 6.26 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 31654
+torch used time 5.39 ms
+
+cutlass GemmBasic used time 6.82 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 8.14 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 32585
+torch used time 5.62 ms
+
+cutlass GemmBasic used time 7.01 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 17.36 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 7700
+torch used time 1.47 ms
+
+cutlass GemmBasic used time 1.42 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 2.44 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 14950
+torch used time 2.61 ms
+
+cutlass GemmBasic used time 3.12 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 2.57 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 15600
+torch used time 2.71 ms
+
+cutlass GemmBasic used time 3.24 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.91 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 16800
+torch used time 3.00 ms
+
+cutlass GemmBasic used time 3.53 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.10 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 17500
+torch used time 3.06 ms
+
+cutlass GemmBasic used time 3.71 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.39 ms
+torch-GemmStreamK diff max 32.0
+
+=========================
+m 18200
+torch used time 3.11 ms
+
+cutlass GemmBasic used time 3.83 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.30 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 20250
+torch used time 3.48 ms
+
+cutlass GemmBasic used time 4.30 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.65 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 25500
+torch used time 4.46 ms
+
+cutlass GemmBasic used time 5.51 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.64 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 26350
+torch used time 4.52 ms
+
+cutlass GemmBasic used time 5.64 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 13.11 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 28800
+torch used time 4.94 ms
+
+cutlass GemmBasic used time 6.16 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.86 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 29700
+torch used time 5.02 ms
+
+cutlass GemmBasic used time 6.39 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 16.77 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 32300
+torch used time 5.62 ms
+
+cutlass GemmBasic used time 6.99 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 6.66 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 7854
+torch used time 1.47 ms
+
+cutlass GemmBasic used time 1.43 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 2.60 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 20655
+torch used time 3.52 ms
+
+cutlass GemmBasic used time 4.37 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.52 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 23664
+torch used time 4.13 ms
+
+cutlass GemmBasic used time 5.06 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.23 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 26010
+torch used time 4.52 ms
+
+cutlass GemmBasic used time 5.58 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.62 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 26877
+torch used time 4.59 ms
+
+cutlass GemmBasic used time 5.80 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 12.88 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 29376
+torch used time 4.99 ms
+
+cutlass GemmBasic used time 6.33 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 15.86 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 30294
+torch used time 5.24 ms
+
+cutlass GemmBasic used time 6.52 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 26.06 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 31977
+torch used time 5.39 ms
+
+cutlass GemmBasic used time 6.86 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 19.39 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 33915
+torch used time 5.77 ms
+
+cutlass GemmBasic used time 7.29 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 19.98 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 8008
+torch used time 1.46 ms
+
+cutlass GemmBasic used time 1.47 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 1.42 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 15548
+torch used time 2.71 ms
+
+cutlass GemmBasic used time 3.24 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 28.16 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 16224
+torch used time 2.95 ms
+
+cutlass GemmBasic used time 3.43 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 8.90 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 20280
+torch used time 3.48 ms
+
+cutlass GemmBasic used time 4.31 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 7.65 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 23296
+torch used time 4.09 ms
+
+cutlass GemmBasic used time 5.00 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 10.70 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 24128
+torch used time 4.17 ms
+
+cutlass GemmBasic used time 5.15 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.09 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 27404
+torch used time 4.63 ms
+
+cutlass GemmBasic used time 5.89 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 50.75 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 29952
+torch used time 5.06 ms
+
+cutlass GemmBasic used time 6.43 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.07 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 33592
+torch used time 5.73 ms
+
+cutlass GemmBasic used time 7.24 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 14.27 ms
+torch-GemmStreamK diff max 32.0
+
+=========================
+m 8162
+torch used time 1.52 ms
+
+cutlass GemmBasic used time 1.54 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 590.86 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 15847
+torch used time 2.73 ms
+
+cutlass GemmBasic used time 3.30 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 24.63 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 19292
+torch used time 3.39 ms
+
+cutlass GemmBasic used time 4.08 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 15.41 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 20670
+torch used time 3.52 ms
+
+cutlass GemmBasic used time 4.37 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.54 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 22260
+torch used time 3.82 ms
+
+cutlass GemmBasic used time 4.77 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 15.15 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 27030
+torch used time 4.63 ms
+
+cutlass GemmBasic used time 5.83 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 29.89 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 30528
+torch used time 5.28 ms
+
+cutlass GemmBasic used time 6.57 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 20.50 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 34238
+torch used time 5.77 ms
+
+cutlass GemmBasic used time 7.34 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 37.57 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 8316
+torch used time 1.52 ms
+
+cutlass GemmBasic used time 1.57 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 8.31 ms
+torch-GemmStreamK diff max 32.0
+
+=========================
+m 16146
+torch used time 2.94 ms
+
+cutlass GemmBasic used time 3.42 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 8.17 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 18144
+torch used time 3.11 ms
+
+cutlass GemmBasic used time 3.82 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 23.79 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 18900
+torch used time 3.34 ms
+
+cutlass GemmBasic used time 4.01 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 7.03 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 21060
+torch used time 3.71 ms
+
+cutlass GemmBasic used time 4.50 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 13.30 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 21870
+torch used time 3.78 ms
+
+cutlass GemmBasic used time 4.64 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.71 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 22680
+torch used time 3.86 ms
+
+cutlass GemmBasic used time 4.82 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 12.13 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 25056
+torch used time 4.26 ms
+
+cutlass GemmBasic used time 5.38 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 12.24 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 30132
+torch used time 5.23 ms
+
+cutlass GemmBasic used time 6.51 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 9.71 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 32076
+torch used time 5.40 ms
+
+cutlass GemmBasic used time 6.86 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 11.91 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 8470
+torch used time 1.51 ms
+
+cutlass GemmBasic used time 1.59 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 26.53 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 16445
+torch used time 2.96 ms
+
+cutlass GemmBasic used time 3.48 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 34.17 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 17160
+torch used time 3.01 ms
+
+cutlass GemmBasic used time 3.62 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 2.96 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 19250
+torch used time 3.39 ms
+
+cutlass GemmBasic used time 4.07 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 28.82 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 22275
+torch used time 3.81 ms
+
+cutlass GemmBasic used time 4.78 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 21.89 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 25520
+torch used time 4.47 ms
+
+cutlass GemmBasic used time 5.50 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 14.10 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 28050
+torch used time 4.87 ms
+
+cutlass GemmBasic used time 6.06 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 24.51 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 34485
+torch used time 5.78 ms
+
+cutlass GemmBasic used time 7.39 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.83 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 8624
+torch used time 1.57 ms
+
+cutlass GemmBasic used time 1.64 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 16.80 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 16744
+torch used time 3.00 ms
+
+cutlass GemmBasic used time 3.52 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 18.41 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 17472
+torch used time 3.06 ms
+
+cutlass GemmBasic used time 3.71 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 7.88 ms
+torch-GemmStreamK diff max 32.0
+
+=========================
+m 18816
+torch used time 3.34 ms
+
+cutlass GemmBasic used time 3.99 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 18.47 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 19600
+torch used time 3.43 ms
+
+cutlass GemmBasic used time 4.19 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 11.03 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 22680
+torch used time 3.88 ms
+
+cutlass GemmBasic used time 4.83 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 13.27 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 25984
+torch used time 4.52 ms
+
+cutlass GemmBasic used time 5.59 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 13.82 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 29512
+torch used time 5.00 ms
+
+cutlass GemmBasic used time 6.34 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 42.83 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 32256
+torch used time 5.44 ms
+
+cutlass GemmBasic used time 6.90 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.44 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 33264
+torch used time 5.68 ms
+
+cutlass GemmBasic used time 7.13 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 20.84 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 8778
+torch used time 1.58 ms
+
+cutlass GemmBasic used time 1.65 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 15.57 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 17784
+torch used time 3.06 ms
+
+cutlass GemmBasic used time 3.76 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 8.87 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 20748
+torch used time 3.71 ms
+
+cutlass GemmBasic used time 4.45 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 11.34 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 23085
+torch used time 4.09 ms
+
+cutlass GemmBasic used time 4.97 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 27.68 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 23940
+torch used time 4.15 ms
+
+cutlass GemmBasic used time 5.13 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 13.09 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 26448
+torch used time 4.57 ms
+
+cutlass GemmBasic used time 5.66 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.49 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 30039
+torch used time 5.23 ms
+
+cutlass GemmBasic used time 6.49 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 14.42 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 33858
+torch used time 5.76 ms
+
+cutlass GemmBasic used time 7.29 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 10.43 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 8932
+torch used time 1.58 ms
+
+cutlass GemmBasic used time 1.67 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 16.23 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 17342
+torch used time 3.05 ms
+
+cutlass GemmBasic used time 3.67 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 15.88 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 18096
+torch used time 3.11 ms
+
+cutlass GemmBasic used time 3.81 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 11.38 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 20300
+torch used time 3.49 ms
+
+cutlass GemmBasic used time 4.31 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 12.03 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 21112
+torch used time 4.50 ms
+
+cutlass GemmBasic used time 4.51 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 23.02 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 26912
+torch used time 4.63 ms
+
+cutlass GemmBasic used time 5.80 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 30.73 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 30566
+torch used time 5.28 ms
+
+cutlass GemmBasic used time 6.57 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 18.65 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 33408
+torch used time 5.71 ms
+
+cutlass GemmBasic used time 7.17 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.64 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 34452
+torch used time 5.83 ms
+
+cutlass GemmBasic used time 7.38 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.83 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 9086
+torch used time 1.59 ms
+
+cutlass GemmBasic used time 1.69 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 52.69 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 17641
+torch used time 3.06 ms
+
+cutlass GemmBasic used time 3.73 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 28.06 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 18408
+torch used time 3.14 ms
+
+cutlass GemmBasic used time 3.87 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.15 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 20650
+torch used time 3.52 ms
+
+cutlass GemmBasic used time 4.37 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.53 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 23895
+torch used time 4.15 ms
+
+cutlass GemmBasic used time 5.12 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 10.67 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 24780
+torch used time 4.25 ms
+
+cutlass GemmBasic used time 5.32 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 16.41 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 26432
+torch used time 4.56 ms
+
+cutlass GemmBasic used time 5.67 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.48 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 27376
+torch used time 4.63 ms
+
+cutlass GemmBasic used time 5.86 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 10.54 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 9240
+torch used time 1.80 ms
+
+cutlass GemmBasic used time 1.79 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 21.82 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 18720
+torch used time 3.34 ms
+
+cutlass GemmBasic used time 3.98 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 26.66 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 21000
+torch used time 3.72 ms
+
+cutlass GemmBasic used time 4.50 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 18.40 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 21840
+torch used time 3.75 ms
+
+cutlass GemmBasic used time 4.63 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.71 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 23400
+torch used time 4.11 ms
+
+cutlass GemmBasic used time 5.02 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 16.12 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 26880
+torch used time 4.57 ms
+
+cutlass GemmBasic used time 5.79 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 16.06 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 27840
+torch used time 4.86 ms
+
+cutlass GemmBasic used time 6.02 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 11.01 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 31620
+torch used time 5.39 ms
+
+cutlass GemmBasic used time 6.82 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 14.49 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 34560
+torch used time 5.83 ms
+
+cutlass GemmBasic used time 7.39 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.82 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 9394
+torch used time 1.80 ms
+
+cutlass GemmBasic used time 1.80 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 7.75 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 19032
+torch used time 3.38 ms
+
+cutlass GemmBasic used time 4.03 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 42.29 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 20496
+torch used time 3.49 ms
+
+cutlass GemmBasic used time 4.34 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 18.63 ms
+torch-GemmStreamK diff max 32.0
+
+=========================
+m 21350
+torch used time 3.76 ms
+
+cutlass GemmBasic used time 4.56 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 9.55 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 23790
+torch used time 4.13 ms
+
+cutlass GemmBasic used time 5.07 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 17.18 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 24705
+torch used time 4.25 ms
+
+cutlass GemmBasic used time 5.32 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 14.90 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 27328
+torch used time 4.64 ms
+
+cutlass GemmBasic used time 5.86 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 9.46 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 28304
+torch used time 4.90 ms
+
+cutlass GemmBasic used time 6.10 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 8.50 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 31110
+torch used time 5.34 ms
+
+cutlass GemmBasic used time 6.73 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 11.34 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 32147
+torch used time 5.40 ms
+
+cutlass GemmBasic used time 6.88 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.44 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 9548
+torch used time 1.81 ms
+
+cutlass GemmBasic used time 1.84 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.07 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 18538
+torch used time 3.33 ms
+
+cutlass GemmBasic used time 3.96 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.36 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 19344
+torch used time 3.39 ms
+
+cutlass GemmBasic used time 4.09 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.51 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 21700
+torch used time 3.77 ms
+
+cutlass GemmBasic used time 4.61 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.89 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 25110
+torch used time 4.25 ms
+
+cutlass GemmBasic used time 5.39 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 6.60 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 26040
+torch used time 4.52 ms
+
+cutlass GemmBasic used time 5.59 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 6.66 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 9702
+torch used time 1.81 ms
+
+cutlass GemmBasic used time 1.85 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 8.68 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 19656
+torch used time 3.43 ms
+
+cutlass GemmBasic used time 4.18 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.55 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 22050
+torch used time 3.82 ms
+
+cutlass GemmBasic used time 4.73 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.39 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 22932
+torch used time 3.90 ms
+
+cutlass GemmBasic used time 4.87 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.92 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 25515
+torch used time 4.47 ms
+
+cutlass GemmBasic used time 5.50 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 7.72 ms
+torch-GemmStreamK diff max 32.0
+
+=========================
+m 28224
+torch used time 4.90 ms
+
+cutlass GemmBasic used time 6.08 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 6.60 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 32130
+torch used time 5.40 ms
+
+cutlass GemmBasic used time 6.89 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.44 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 33201
+torch used time 5.66 ms
+
+cutlass GemmBasic used time 7.13 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 6.83 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 9856
+torch used time 1.85 ms
+
+cutlass GemmBasic used time 1.89 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 3.96 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 19136
+torch used time 3.38 ms
+
+cutlass GemmBasic used time 4.04 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.48 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 19968
+torch used time 3.44 ms
+
+cutlass GemmBasic used time 4.24 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.58 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 21504
+torch used time 3.76 ms
+
+cutlass GemmBasic used time 4.58 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.86 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 23296
+torch used time 4.09 ms
+
+cutlass GemmBasic used time 5.00 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.28 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 25920
+torch used time 4.52 ms
+
+cutlass GemmBasic used time 5.58 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.62 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 26880
+torch used time 4.59 ms
+
+cutlass GemmBasic used time 5.78 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.72 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 32640
+torch used time 5.62 ms
+
+cutlass GemmBasic used time 7.03 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 7.02 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 33728
+torch used time 5.73 ms
+
+cutlass GemmBasic used time 7.24 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 8.01 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 10010
+torch used time 1.86 ms
+
+cutlass GemmBasic used time 1.92 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 2.82 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 19435
+torch used time 3.38 ms
+
+cutlass GemmBasic used time 4.09 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.52 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 20280
+torch used time 3.49 ms
+
+cutlass GemmBasic used time 4.30 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.65 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 29120
+torch used time 4.97 ms
+
+cutlass GemmBasic used time 6.30 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 7.66 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 33150
+torch used time 5.66 ms
+
+cutlass GemmBasic used time 7.09 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 6.65 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 34255
+torch used time 5.77 ms
+
+cutlass GemmBasic used time 7.35 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 11.87 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 10164
+torch used time 1.85 ms
+
+cutlass GemmBasic used time 1.93 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 7.12 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 20592
+torch used time 3.52 ms
+
+cutlass GemmBasic used time 4.34 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 8.92 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 26730
+torch used time 4.57 ms
+
+cutlass GemmBasic used time 5.77 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.83 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 29568
+torch used time 5.00 ms
+
+cutlass GemmBasic used time 6.35 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 6.55 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 33660
+torch used time 5.72 ms
+
+cutlass GemmBasic used time 7.24 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 6.74 ms
+torch-GemmStreamK diff max 32.0
+
+=========================
+m 10318
+torch used time 1.86 ms
+
+cutlass GemmBasic used time 1.96 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 1.82 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 20033
+torch used time 3.44 ms
+
+cutlass GemmBasic used time 4.26 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 4.60 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 20904
+torch used time 3.71 ms
+
+cutlass GemmBasic used time 4.47 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.43 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 22512
+torch used time 3.85 ms
+
+cutlass GemmBasic used time 4.81 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 6.14 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 23450
+torch used time 4.11 ms
+
+cutlass GemmBasic used time 5.03 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 11.77 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 27135
+torch used time 4.61 ms
+
+cutlass GemmBasic used time 5.83 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 8.28 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 28140
+torch used time 4.87 ms
+
+cutlass GemmBasic used time 6.07 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 6.40 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 30016
+torch used time 5.22 ms
+
+cutlass GemmBasic used time 6.48 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 7.95 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 31088
+torch used time 5.33 ms
+
+cutlass GemmBasic used time 6.66 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 5.26 ms
+torch-GemmStreamK diff max 0.0
+
+=========================
+m 10472
+torch used time 1.90 ms
+
+cutlass GemmBasic used time 2.05 ms
+torch-GemmBasic diff max 0.0
+
+cutlass GemmStreamK used time 8.16 ms
+torch-GemmStreamK diff max 64.0
+
+=========================
+m 20332
+torch used time 3.48 ms
+
+cutlass GemmBasic used time 4.30 ms
+torch-GemmBasic diff max 0.0

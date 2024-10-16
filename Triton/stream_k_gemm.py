@@ -22,7 +22,7 @@ random.seed(123)
 device = torch.cuda.current_device()
 # cuda_utils = CudaUtils()
 # total_sm = cuda_utils.get_device_properties(device)["multiprocessor_count"]
-total_sm = 84
+total_sm = 108
 print(f"total SMs: {total_sm}")
 
 # ---------------------------------------------------------------------------
